@@ -76,15 +76,15 @@
         </div>
     </header>
 
-    <!-- Sección Hero (Inicio) con Fachada con proporciones controladas -->
+    <!-- Sección Hero (Inicio) con Fachada Completa sin Recortes -->
     <section id="inicio" class="relative pt-28 pb-16 px-6 max-w-5xl mx-auto flex flex-col items-center justify-center min-h-[80vh]">
-        <!-- Contenedor Enmarcado para que la Fachada no se deforme ni se ensanche de más -->
-        <div class="w-full relative rounded-3xl overflow-hidden aspect-[16/9] md:aspect-[21/9] shadow-2xl mb-8 bg-stone-900">
-            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-cover object-center brightness-75">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
+        <!-- Contenedor adaptado a la proporción de la fachada real (1157x912 es cercano a 4:3) -->
+        <div class="w-full relative rounded-3xl overflow-hidden aspect-[4/3] md:max-h-[500px] shadow-2xl mb-8 bg-stone-950 flex items-center justify-center">
+            <!-- object-contain asegura que se vea TODA la foto original sin cortarse arriba ni a los lados -->
+            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-contain object-center">
         </div>
 
-        <!-- Contenido inferior bien estructurado -->
+        <!-- Contenido inferior -->
         <div class="text-center max-w-3xl mx-auto">
             <span class="inline-block bg-oceanTeal/10 text-oceanTeal text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full font-semibold mb-4">
                 📍 Barquisimeto, Estado Lara
@@ -134,7 +134,7 @@
         </div>
     </section>
 
-    <!-- Sección Habitaciones (Orden de fotos corregido de Izquierda a Derecha) -->
+    <!-- Sección Habitaciones (Formatos corregidos a .png) -->
     <section id="habitaciones" class="py-24 bg-warmSand">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -146,10 +146,10 @@
             <!-- Grid de Habitaciones -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Hab 1: Matrimonial (Asignada a cuarto5.jpg) -->
+                <!-- Hab 1: Matrimonial (Corregido a cuarto5.png) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
-                        <img src="cuarto5.jpg" alt="Habitación Matrimonial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="cuarto5.png" alt="Habitación Matrimonial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial</h4>
@@ -163,7 +163,7 @@
                     </div>
                 </div>
 
-                <!-- Hab 2: Matrimonial + 1 Cama (Asignada a cuarto1.png) -->
+                <!-- Hab 2: Matrimonial + 1 Cama (Corregido a cuarto1.png) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
                         <img src="cuarto1.png" alt="Habitación Matrimonial más una cama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
