@@ -76,30 +76,30 @@
         </div>
     </header>
 
-    <!-- Sección Hero (Inicio) con Fachada Reducida y Centrada -->
-    <section id="inicio" class="relative min-h-[75vh] md:h-[80vh] w-full flex items-center justify-center overflow-hidden pt-24">
-        <div class="absolute inset-0 w-full h-full z-0">
-            <!-- Imagen reducida/adaptada y centrada -->
-            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-cover object-center brightness-50">
-            <div class="absolute inset-0 bg-gradient-to-b from-stone-900/50 via-stone-900/30 to-cream"></div>
+    <!-- Sección Hero (Inicio) con Fachada con proporciones controladas -->
+    <section id="inicio" class="relative pt-28 pb-16 px-6 max-w-5xl mx-auto flex flex-col items-center justify-center min-h-[80vh]">
+        <!-- Contenedor Enmarcado para que la Fachada no se deforme ni se ensanche de más -->
+        <div class="w-full relative rounded-3xl overflow-hidden aspect-[16/9] md:aspect-[21/9] shadow-2xl mb-8 bg-stone-900">
+            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-cover object-center brightness-75">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
         </div>
 
-        <!-- Contenido -->
-        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <span class="inline-block bg-white/20 backdrop-blur-md text-white text-xs md:text-sm uppercase tracking-widest px-4 py-2 rounded-full border border-white/20 mb-6">
+        <!-- Contenido inferior bien estructurado -->
+        <div class="text-center max-w-3xl mx-auto">
+            <span class="inline-block bg-oceanTeal/10 text-oceanTeal text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full font-semibold mb-4">
                 📍 Barquisimeto, Estado Lara
             </span>
-            <h2 class="font-serif text-4xl md:text-6xl text-white font-bold leading-tight drop-shadow-md mb-6">
+            <h2 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold leading-tight mb-4">
                 Tu hogar lejos de casa en la ciudad crepuscular
             </h2>
-            <p class="text-base md:text-lg text-stone-100 max-w-2xl mx-auto mb-10 drop-shadow">
+            <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto mb-8">
                 Bienvenidos al Hotel Turístico La Orquídea C.A. Disfruta de un ambiente cómodo, seguro y con la mejor atención personalizada en una ubicación estratégica de Barquisimeto.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#contacto" class="w-full sm:w-auto bg-sunsetCoral text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                <a href="#contacto" class="w-full sm:w-auto bg-sunsetCoral text-white font-semibold px-8 py-3.5 rounded-full shadow-md hover:bg-opacity-90 hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center">
                     Consultar Disponibilidad
                 </a>
-                <a href="#habitaciones" class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all">
+                <a href="#habitaciones" class="w-full sm:w-auto bg-warmSand text-oceanTeal border border-stone-200 font-semibold px-8 py-3.5 rounded-full hover:bg-stone-200/50 transition-all text-center">
                     Ver Habitaciones y Tarifas
                 </a>
             </div>
@@ -134,7 +134,7 @@
         </div>
     </section>
 
-    <!-- Sección Habitaciones -->
+    <!-- Sección Habitaciones (Orden de fotos corregido de Izquierda a Derecha) -->
     <section id="habitaciones" class="py-24 bg-warmSand">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -146,10 +146,10 @@
             <!-- Grid de Habitaciones -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Hab 1: Matrimonial -->
+                <!-- Hab 1: Matrimonial (Asignada a cuarto5.jpg) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
-                        <img src="cuarto2.jpg" alt="Habitación Matrimonial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="cuarto5.jpg" alt="Habitación Matrimonial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial</h4>
@@ -180,7 +180,7 @@
                     </div>
                 </div>
 
-                <!-- Hab 3: Matrimonial + 1 Litera -->
+                <!-- Hab 3: Matrimonial + 1 Litera (Asignada a cuarto3.jpg) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
                         <img src="cuarto3.jpg" alt="Habitación Matrimonial más litera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -197,10 +197,10 @@
                     </div>
                 </div>
 
-                <!-- Hab 4: Múltiple / Familiar -->
+                <!-- Hab 4: Múltiple / Familiar (Asignada a cuarto2.jpg) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
-                        <img src="pasillo.jpg" alt="Habitación Múltiple Familiar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="cuarto2.jpg" alt="Habitación Múltiple Familiar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Múltiple / Familiar</h4>
