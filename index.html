@@ -76,12 +76,11 @@
         </div>
     </header>
 
-    <!-- Sección Hero (Inicio) con Fachada Completa sin Recortes -->
-    <section id="inicio" class="relative pt-28 pb-16 px-6 max-w-5xl mx-auto flex flex-col items-center justify-center min-h-[80vh]">
-        <!-- Contenedor adaptado a la proporción de la fachada real (1157x912 es cercano a 4:3) -->
-        <div class="w-full relative rounded-3xl overflow-hidden aspect-[4/3] md:max-h-[500px] shadow-2xl mb-8 bg-stone-950 flex items-center justify-center">
-            <!-- object-contain asegura que se vea TODA la foto original sin cortarse arriba ni a los lados -->
-            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-contain object-center">
+    <!-- Sección Hero (Inicio) con Fachada Cuadrada y Proporcionada -->
+    <section id="inicio" class="relative pt-28 pb-16 px-6 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[80vh]">
+        <!-- Contenedor Cuadrado y estilizado para la fachada sin bordes negros artificiales -->
+        <div class="w-full relative rounded-3xl overflow-hidden aspect-square max-h-[550px] shadow-2xl mb-8 border border-stone-200/60">
+            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-cover object-center">
         </div>
 
         <!-- Contenido inferior -->
@@ -134,7 +133,7 @@
         </div>
     </section>
 
-    <!-- Sección Habitaciones (Formatos corregidos a .png) -->
+    <!-- Sección Habitaciones -->
     <section id="habitaciones" class="py-24 bg-warmSand">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -146,7 +145,7 @@
             <!-- Grid de Habitaciones -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Hab 1: Matrimonial (Corregido a cuarto5.png) -->
+                <!-- Hab 1: Matrimonial -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
                         <img src="cuarto5.png" alt="Habitación Matrimonial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -163,10 +162,10 @@
                     </div>
                 </div>
 
-                <!-- Hab 2: Matrimonial + 1 Cama (Corregido a cuarto1.png) -->
+                <!-- Hab 2: Matrimonial + 1 Cama (Corregido a cuarto1.jpg) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
-                        <img src="cuarto1.png" alt="Habitación Matrimonial más una cama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="cuarto1.jpg" alt="Habitación Matrimonial más una cama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial + 1 Cama</h4>
@@ -180,7 +179,7 @@
                     </div>
                 </div>
 
-                <!-- Hab 3: Matrimonial + 1 Litera (Asignada a cuarto3.jpg) -->
+                <!-- Hab 3: Matrimonial + 1 Litera -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
                         <img src="cuarto3.jpg" alt="Habitación Matrimonial más litera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -197,7 +196,7 @@
                     </div>
                 </div>
 
-                <!-- Hab 4: Múltiple / Familiar (Asignada a cuarto2.jpg) -->
+                <!-- Hab 4: Múltiple / Familiar -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
                         <img src="cuarto2.jpg" alt="Habitación Múltiple Familiar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -227,7 +226,6 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            <!-- Servicio 1 -->
             <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
                 <div>
                     <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
@@ -238,7 +236,6 @@
                 </div>
             </div>
 
-            <!-- Servicio 2 -->
             <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
                 <div>
                     <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
@@ -249,10 +246,9 @@
                 </div>
             </div>
 
-            <!-- Servicio 3 -->
             <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
                 <div>
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl mb-4">
                         <i class="fa-solid fa-shield-halved"></i>
                     </span>
                     <h4 class="font-serif font-bold text-stone-800 mb-2">Seguridad 24h</h4>
@@ -260,7 +256,6 @@
                 </div>
             </div>
 
-            <!-- Servicio 4 -->
             <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
                 <div>
                     <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
@@ -271,7 +266,6 @@
                 </div>
             </div>
 
-            <!-- Servicio 5 -->
             <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
                 <div>
                     <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
@@ -296,7 +290,6 @@
                     Comunícate directamente con nuestra recepción para asegurar tu habitación o solicitar cotizaciones corporativas institucionales.
                 </p>
 
-                <!-- Tarjetas de Datos Reales -->
                 <div class="flex flex-col gap-6">
                     <div class="flex items-center gap-4">
                         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
