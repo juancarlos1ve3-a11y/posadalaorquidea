@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posada Sol y Mar | Tu Escape de Ensueño en la Costa</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#faf6f0',
+                        warmSand: '#f3ece3',
+                        oceanTeal: '#0a5c66',
+                        oceanDark: '#073e45',
+                        sunsetCoral: '#e36414',
+                        sunsetWarm: '#f28e2b',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"DM Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-cream font-sans text-stone-800 antialiased selection:bg-oceanTeal selection:text-white">
+
+    <!-- Header / Navegación -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center gap-2 group">
+                <span class="text-2xl md:text-3xl text-sunsetCoral group-hover:text-sunsetWarm transition-colors">
+                    <i class="fa-solid fa-sun-plant-wilt"></i>
+                </span>
+                <div class="leading-none">
+                    <h1 class="font-serif font-bold text-lg md:text-xl text-oceanTeal group-hover:text-sunsetCoral transition-colors">Posada</h1>
+                    <span class="font-sans text-xs uppercase tracking-widest text-stone-600 block">Sol y Mar</span>
+                </div>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#inicio" class="text-stone-800 hover:text-oceanTeal transition-colors">Inicio</a>
+                <a href="#historia" class="text-stone-800 hover:text-oceanTeal transition-colors">Historia</a>
+                <a href="#habitaciones" class="text-stone-800 hover:text-oceanTeal transition-colors">Habitaciones</a>
+                <a href="#servicios" class="text-stone-800 hover:text-oceanTeal transition-colors">Servicios</a>
+                <a href="#galeria" class="text-stone-800 hover:text-oceanTeal transition-colors">Galería</a>
+                <a href="#contacto" class="bg-oceanTeal text-white px-6 py-2.5 rounded-full hover:bg-oceanDark shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">Reservar</a>
+            </nav>
+
+            <!-- Botón de Menú Móvil -->
+            <button class="md:hidden text-2xl text-oceanTeal focus:outline-none" id="menu-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="hidden md:hidden bg-cream border-t border-stone-200/50 shadow-xl" id="mobile-menu">
+            <div class="px-6 py-6 flex flex-col gap-4 text-center">
+                <a href="#inicio" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Inicio</a>
+                <a href="#historia" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Historia</a>
+                <a href="#habitaciones" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Habitaciones</a>
+                <a href="#servicios" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Servicios</a>
+                <a href="#galeria" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Galería</a>
+                <a href="#contacto" class="bg-oceanTeal text-white px-6 py-3 rounded-full hover:bg-oceanDark transition-colors shadow-md mt-2">Reservar Ahora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero (Inicio) -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Imagen de Fondo -->
+        <div class="absolute inset-0 z-0">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_0" alt="Resort Boutique Exterior" class="w-full h-full object-cover brightness-75">
+            <div class="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/20 to-cream"></div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16">
+            <span class="inline-block bg-white/20 backdrop-blur-md text-white text-xs md:text-sm uppercase tracking-widest px-4 py-2 rounded-full border border-white/20 mb-6 animate-fade-in">
+                🌊 Un Paraíso Exclusivo en la Costa
+            </span>
+            <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight drop-shadow-md mb-6">
+                Tu escapada perfecta te espera
+            </h2>
+            <p class="text-lg md:text-xl text-stone-100 max-w-2xl mx-auto mb-10 drop-shadow">
+                Ven a Posada Sol y Mar, un rincón de tranquilidad y belleza natural. Disfruta de nuestras cómodas habitaciones, vistas al mar y una hospitalidad inolvidable.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contacto" class="w-full sm:w-auto bg-sunsetCoral text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    ¡Reserva Ahora y Descubre el Paraíso!
+                </a>
+                <a href="#habitaciones" class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all">
+                    Ver Habitaciones
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-stone-600 animate-bounce cursor-pointer">
+            <span class="text-xs uppercase tracking-widest">Explorar</span>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+        </div>
+    </section>
+
+    <!-- Sección Nuestra Historia y Filosofía -->
+    <section id="historia" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <!-- Columna Texto -->
+            <div class="lg:col-span-7">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Quienes Somos</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-6">Nuestra Historia & Filosofía</h3>
+                <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                    Nacimos bajo la idea de crear un santuario de descanso donde el sonido de las olas y la brisa del mar sean tus únicos acompañantes. En <strong>Posada Sol y Mar</strong> combinamos un diseño arquitectónico caribeño y minimalista con el lujo rústico y acogedor que mereces.
+                </p>
+                <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                    Nuestra filosofía se centra en la desconexión total y la comunión con la naturaleza. Creemos firmemente en el turismo sustentable, apoyando activamente a nuestra comunidad local de pescadores y artesanos para traerte la experiencia más auténtica y fresca de la costa.
+                </p>
+                <!-- Highlights -->
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-stone-200">
+                    <div class="flex items-start gap-3">
+                        <span class="text-sunsetCoral text-xl mt-1"><i class="fa-solid fa-leaf"></i></span>
+                        <div>
+                            <h4 class="font-semibold text-stone-800">100% Ecológico</h4>
+                            <p class="text-sm text-stone-500">Energías limpias y reducción de plástico.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-sunsetCoral text-xl mt-1"><i class="fa-solid fa-face-smile"></i></span>
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Servicio Boutique</h4>
+                            <p class="text-sm text-stone-500">Atención personalizada y exclusiva.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Imágenes / Composición Visual -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl z-10 border-4 border-white">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_2" alt="Nuestra Posada Atardecer" class="w-full h-full object-cover">
+                </div>
+                <!-- Decoración Flotante -->
+                <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-sunsetCoral/10 rounded-full blur-3xl z-0"></div>
+                <div class="absolute -top-8 -right-8 w-48 h-48 bg-oceanTeal/10 rounded-full blur-3xl z-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Habitaciones Exclusivas -->
+    <section id="habitaciones" class="py-24 bg-warmSand">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Tu Descanso Ideal</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Habitaciones Exclusivas</h3>
+                <p class="text-stone-600">Cada espacio ha sido meticulosamente decorado para ofrecerte vistas espectaculares, relajación absoluta y una experiencia inigualable.</p>
+            </div>
+
+            <!-- Grid de Habitaciones -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Hab 1: Vista al Mar -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative overflow-hidden aspect-[4/3] w-full">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_1" alt="Habitación Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-oceanTeal text-white text-xs uppercase tracking-wider font-semibold px-3 py-1.5 rounded-full">Popular</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h4 class="font-serif text-2xl font-bold text-stone-800 mb-2">Suite Vista al Mar</h4>
+                        <p class="text-stone-500 text-sm mb-6 flex-grow">Despierta con la inmensidad del océano ante tus ojos. Incluye balcón privado, cama King Size, Wi-Fi de alta velocidad y cafetera premium.</p>
+                        <div class="flex items-center justify-between border-t border-stone-100 pt-6 mt-auto">
+                            <div>
+                                <span class="text-xs uppercase text-stone-400 block">Tarifa Base</span>
+                                <span class="text-xl font-bold text-oceanTeal font-serif">$130 <span class="text-sm font-normal text-stone-500">/ noche</span></span>
+                            </div>
+                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-5 py-2.5 rounded-full font-medium text-sm transition-colors">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hab 2: Suite de Lujo -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative overflow-hidden aspect-[4/3] w-full">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_3" alt="Suite de Lujo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-sunsetCoral text-white text-xs uppercase tracking-wider font-semibold px-3 py-1.5 rounded-full">Exclusivo</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h4 class="font-serif text-2xl font-bold text-stone-800 mb-2">Suite de Lujo con Jacuzzi</h4>
+                        <p class="text-stone-500 text-sm mb-6 flex-grow">Nuestra joya de la corona. Cuenta con jacuzzi privado al aire libre, acceso directo al jardín botánico y servicio a la habitación personalizado.</p>
+                        <div class="flex items-center justify-between border-t border-stone-100 pt-6 mt-auto">
+                            <div>
+                                <span class="text-xs uppercase text-stone-400 block">Tarifa Base</span>
+                                <span class="text-xl font-bold text-oceanTeal font-serif">$180 <span class="text-sm font-normal text-stone-500">/ noche</span></span>
+                            </div>
+                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-5 py-2.5 rounded-full font-medium text-sm transition-colors">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hab 3: Casita Jardín -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative overflow-hidden aspect-[4/3] w-full">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_2" alt="Casita Jardín" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h4 class="font-serif text-2xl font-bold text-stone-800 mb-2">Cabaña del Bosque Costero</h4>
+                        <p class="text-stone-500 text-sm mb-6 flex-grow">Rodeada de palmeras exuberantes e íntimos jardines. Perfecta para quienes buscan máxima privacidad y cercanía con la naturaleza salvaje.</p>
+                        <div class="flex items-center justify-between border-t border-stone-100 pt-6 mt-auto">
+                            <div>
+                                <span class="text-xs uppercase text-stone-400 block">Tarifa Base</span>
+                                <span class="text-xl font-bold text-oceanTeal font-serif">$95 <span class="text-sm font-normal text-stone-500">/ noche</span></span>
+                            </div>
+                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-5 py-2.5 rounded-full font-medium text-sm transition-colors">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios & Experiencias -->
+    <section id="servicios" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Atención Excepcional</span>
+            <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Servicios & Experiencias</h3>
+            <p class="text-stone-600">Queremos que tu estadía sea inolvidable. Ponemos a tu disposición instalaciones y servicios de primera clase pensados para tu confort total.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Servicio 1 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md border border-stone-100 transition-all text-center">
+                <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-oceanTeal/10 text-oceanTeal text-2xl mb-6">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </span>
+                <h4 class="font-serif text-xl font-bold text-stone-800 mb-3">Desayuno Incluido</h4>
+                <p class="text-stone-500 text-sm">Disfruta cada mañana de un buffet con frutas tropicales, panes artesanales y el mejor café costero recién hecho.</p>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md border border-stone-100 transition-all text-center">
+                <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-oceanTeal/10 text-oceanTeal text-2xl mb-6">
+                    <i class="fa-solid fa-water"></i>
+                </span>
+                <h4 class="font-serif text-xl font-bold text-stone-800 mb-3">Piscina Infinita</h4>
+                <p class="text-stone-500 text-sm">Nuestra piscina climatizada se funde visualmente con el horizonte marítimo, ofreciendo atardeceres mágicos.</p>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md border border-stone-100 transition-all text-center">
+                <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-oceanTeal/10 text-oceanTeal text-2xl mb-6">
+                    <i class="fa-solid fa-compass"></i>
+                </span>
+                <h4 class="font-serif text-xl font-bold text-stone-800 mb-3">Guías Locales</h4>
+                <p class="text-stone-500 text-sm">Te organizamos excursiones guiadas de senderismo, buceo, snorkel y paseos en bote por islas paradisíacas.</p>
+            </div>
+
+            <!-- Servicio 4 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md border border-stone-100 transition-all text-center">
+                <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-oceanTeal/10 text-oceanTeal text-2xl mb-6">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                </span>
+                <h4 class="font-serif text-xl font-bold text-stone-800 mb-3">Acceso Privado</h4>
+                <p class="text-stone-500 text-sm">Un sendero exclusivo y pavimentado te conecta directamente desde tu habitación hasta nuestra tranquila playa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería de Momentos -->
+    <section id="galeria" class="py-24 bg-warmSand">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Nuestras Capturas</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Galería de Momentos</h3>
+                <p class="text-stone-600">Visualiza la paz que se respira en cada rincón de nuestra hermosa posada costera.</p>
+            </div>
+
+            <!-- Galería de Fotos Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="overflow-hidden rounded-3xl aspect-square shadow-md group">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_0" alt="Galería Exterior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-3xl aspect-square shadow-md group">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_1" alt="Galería Habitación" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-3xl aspect-square shadow-md group">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_2" alt="Galería Atardecer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-3xl aspect-square shadow-md group">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12632773277415636688_3" alt="Galería Piscina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto y Reserva -->
+    <section id="contacto" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <!-- Información de Contacto -->
+            <div class="lg:col-span-5">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Contáctanos</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-6">Planifica tu Estadía</h3>
+                <p class="text-stone-600 mb-10 leading-relaxed">
+                    ¿Tienes dudas sobre nuestras tarifas, ubicaciones o servicios? Escríbenos o llena el formulario y te daremos respuesta en un abrir y cerrar de ojos.
+                </p>
+
+                <!-- Tarjetas Informativas -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        <div>
+                            <span class="text-xs uppercase text-stone-400 block">Nuestra Ubicación</span>
+                            <p class="font-semibold text-stone-800">Carretera Costera, Sector Bahía Hermosa, Km 15</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <div>
+                            <span class="text-xs uppercase text-stone-400 block">Llámanos o escríbenos</span>
+                            <p class="font-semibold text-stone-800">+58 (412) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <div>
+                            <span class="text-xs uppercase text-stone-400 block">Correo Electrónico</span>
+                            <p class="font-semibold text-stone-800">contacto@posadasolymar.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="flex items-center gap-4 mt-12">
+                    <a href="#" class="w-10 h-10 rounded-full border border-stone-300 text-stone-600 hover:text-oceanTeal hover:border-oceanTeal flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-stone-300 text-stone-600 hover:text-oceanTeal hover:border-oceanTeal flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-stone-300 text-stone-600 hover:text-oceanTeal hover:border-oceanTeal flex items-center justify-center transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Formulario de Reserva -->
+            <div class="lg:col-span-7 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-stone-100">
+                <h4 class="font-serif text-2xl font-bold text-stone-800 mb-6">Solicitud de Reserva</h4>
+                
+                <form id="reserva-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-stone-700 mb-2">Nombre Completo</label>
+                            <input type="text" id="nombre" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Juan Pérez">
+                        </div>
+                        <div>
+                            <label for="correo" class="block text-sm font-medium text-stone-700 mb-2">Correo Electrónico</label>
+                            <input type="email" id="correo" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="juan@ejemplo.com">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label for="entrada" class="block text-sm font-medium text-stone-700 mb-2">Fecha Entrada</label>
+                            <input type="date" id="entrada" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
+                        </div>
+                        <div>
+                            <label for="salida" class="block text-sm font-medium text-stone-700 mb-2">Fecha Salida</label>
+                            <input type="date" id="salida" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
+                        </div>
+                        <div>
+                            <label for="habitacion-tipo" class="block text-sm font-medium text-stone-700 mb-2">Habitación</label>
+                            <select id="habitacion-tipo" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal bg-white transition-all">
+                                <option value="vista-mar">Suite Vista al Mar</option>
+                                <option value="suite-lujo">Suite de Lujo con Jacuzzi</option>
+                                <option value="cabana-bosque">Cabaña del Bosque Costero</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="mensaje" class="block text-sm font-medium text-stone-700 mb-2">Petición Especial o Comentarios (Opcional)</label>
+                        <textarea id="mensaje" rows="4" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Dinos si viajas por un aniversario, cumpleaños, o requieres alguna especificación alimentaria..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-sunsetCoral hover:bg-opacity-95 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all text-center">
+                        Enviar Solicitud de Reserva
+                    </button>
+                </form>
+
+                <!-- Feedback Success Message (Simulated) -->
+                <div id="success-alert" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl flex items-center gap-3">
+                    <span class="text-xl text-emerald-500"><i class="fa-solid fa-circle-check"></i></span>
+                    <div>
+                        <p class="font-bold">¡Solicitud recibida!</p>
+                        <p class="text-sm">Nos pondremos en contacto contigo en las próximas horas para confirmar disponibilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-oceanDark text-warmSand py-16 px-6 border-t border-stone-800/20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- Columna 1: Brand -->
+            <div class="md:col-span-2">
+                <a href="#inicio" class="flex items-center gap-2 mb-4 group inline-block">
+                    <span class="text-2xl text-sunsetWarm">
+                        <i class="fa-solid fa-sun-plant-wilt"></i>
+                    </span>
+                    <h2 class="font-serif font-bold text-2xl text-white">Posada Sol y Mar</h2>
+                </a>
+                <p class="text-stone-300 text-sm max-w-sm">
+                    Un espacio diseñado para fundirse con la belleza y ritmo natural del mar caribe. Disfruta del verdadero descanso en armonía con el entorno.
+                </p>
+            </div>
+
+            <!-- Columna 2: Links -->
+            <div>
+                <h5 class="text-white font-semibold uppercase tracking-wider text-sm mb-4">Navegación</h5>
+                <ul class="space-y-2 text-sm text-stone-300">
+                    <li><a href="#inicio" class="hover:text-sunsetWarm transition-colors">Inicio</a></li>
+                    <li><a href="#historia" class="hover:text-sunsetWarm transition-colors">Historia</a></li>
+                    <li><a href="#habitaciones" class="hover:text-sunsetWarm transition-colors">Habitaciones</a></li>
+                    <li><a href="#servicios" class="hover:text-sunsetWarm transition-colors">Servicios</a></li>
+                    <li><a href="#galeria" class="hover:text-sunsetWarm transition-colors">Galería</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Legal / Horarios -->
+            <div>
+                <h5 class="text-white font-semibold uppercase tracking-wider text-sm mb-4">Políticas</h5>
+                <ul class="space-y-2 text-sm text-stone-300">
+                    <li>Check-in: 3:00 PM</li>
+                    <li>Check-out: 12:00 PM</li>
+                    <li><a href="#" class="hover:text-sunsetWarm transition-colors">Términos y Condiciones</a></li>
+                    <li><a href="#" class="hover:text-sunsetWarm transition-colors">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-stone-700/50 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
+            <p>&copy; 2026 Posada Sol y Mar. Todos los derechos reservados.</p>
+            <p>Diseñado con amor y serenidad costera 🌴</p>
+        </div>
+    </footer>
+
+    <!-- Script de Interactividad -->
+    <script>
+        // Menu Móvil Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark';
+            }
+        });
+
+        // Ocultar menu móvil al hacer click en un link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars';
+            });
+        });
+
+        // Efecto scroll en Navbar
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('bg-cream/90', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-stone-200/50');
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-cream/90', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-stone-200/50');
+            }
+        });
+
+        // Simulación envío de formulario de reserva
+        const reservaForm = document.getElementById('reserva-form');
+        const successAlert = document.getElementById('success-alert');
+
+        reservaForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evita refrescar la página
+            
+            // Simular carga
+            const btn = reservaForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = 'Enviando Solicitud...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+                reservaForm.reset(); // Limpia campos
+                successAlert.classList.remove('hidden'); // Muestra mensaje de éxito
+
+                // Ocultar alerta después de 8 segundos
+                setTimeout(() => {
+                    successAlert.classList.add('hidden');
+                }, 8000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
+```eof
+
+### ¿Qué debes hacer ahora con este código?
+
+1. **Crea el archivo:** Copia todo el bloque de código de arriba.
+2. **Súbelo a GitHub:** Ve a tu repositorio en GitHub, dale a **Add file** -> **Create new file**, nómbralo exactamente `index.html`, pega el código y guarda los cambios haciendo clic en **Commit changes**.
+3. **¡Listo!** En 1 o 2 minutos, la página estará publicada y visible para todo el mundo bajo tu dirección de **GitHub Pages**.
+
+La página web para tu posada turística ya está lista para que la pruebes y compartas. Cuéntame si te gustaría cambiar los textos, modificar algún color o agregar secciones adicionales.
