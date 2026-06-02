@@ -76,17 +76,16 @@
         </div>
     </header>
 
-    <!-- Sección Hero (Inicio) -->
-    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- Imagen de Fondo Principal -->
-        <div class="absolute inset-0 z-0">
-            <img src="fachada1.png" alt="Hotel Turístico La Orquídea" class="w-full h-full object-cover brightness-75">
+    <!-- Sección Hero (Inicio) con Fachada Completa -->
+    <section id="inicio" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 w-full h-full z-0">
+            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-cover object-center brightness-75">
             <div class="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/20 to-cream"></div>
         </div>
 
         <!-- Contenido -->
         <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16">
-            <span class="inline-block bg-white/20 backdrop-blur-md text-white text-xs md:text-sm uppercase tracking-widest px-4 py-2 rounded-full border border-white/20 mb-6 animate-fade-in">
+            <span class="inline-block bg-white/20 backdrop-blur-md text-white text-xs md:text-sm uppercase tracking-widest px-4 py-2 rounded-full border border-white/20 mb-6">
                 📍 Barquisimeto, Estado Lara
             </span>
             <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight drop-shadow-md mb-6">
@@ -197,7 +196,7 @@
                     </div>
                 </div>
 
-                <!-- Hab 4: Matrimonial + Camas Individuales (Múltiple) -->
+                <!-- Hab 4: Múltiple / Familiar -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
                         <img src="pasillo.jpg" alt="Habitación Múltiple Familiar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -218,36 +217,68 @@
         </div>
     </section>
 
-    <!-- Sección Servicios Breves -->
+    <!-- Sección Servicios Ampliada -->
     <section id="servicios" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Comodidad Asegurada</span>
             <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Nuestros Servicios</h3>
+            <p class="text-stone-500">Diseñados para brindar una estadía placentera y cubrir requerimientos corporativos.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-3xl border border-stone-100 text-center shadow-sm">
-                <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl mb-4">
-                    <i class="fa-solid fa-snowflake"></i>
-                </span>
-                <h4 class="font-serif text-lg font-bold text-stone-800 mb-2">Aire Acondicionado</h4>
-                <p class="text-stone-500 text-sm">Ambientes climatizados para garantizar tu descanso fresco frente al calor guaro.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <!-- Servicio 1 -->
+            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </span>
+                    <h4 class="font-serif font-bold text-stone-800 mb-2">Aire Acondicionado</h4>
+                    <p class="text-stone-500 text-xs">Ambientes totalmente climatizados en cada habitación.</p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-3xl border border-stone-100 text-center shadow-sm">
-                <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl mb-4">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </span>
-                <h4 class="font-serif text-lg font-bold text-stone-800 mb-2">Seguridad 24h</h4>
-                <p class="text-stone-500 text-sm">Instalaciones seguras y personal atento para tu tranquilidad y la de tus bienes.</p>
+            <!-- Servicio 2 -->
+            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                        <i class="fa-solid fa-wifi"></i>
+                    </span>
+                    <h4 class="font-serif font-bold text-stone-800 mb-2">Conexión WiFi</h4>
+                    <p class="text-stone-500 text-xs">Acceso a internet inalámbrico de alta velocidad en las instalaciones.</p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-3xl border border-stone-100 text-center shadow-sm">
-                <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl mb-4">
-                    <i class="fa-solid fa-tv"></i>
-                </span>
-                <h4 class="font-serif text-lg font-bold text-stone-800 mb-2">Televisión por Cable</h4>
-                <p class="text-stone-500 text-sm">Entretenimiento garantizado en todas las habitaciones con variedad de canales.</p>
+            <!-- Servicio 3 -->
+            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+                    <h4 class="font-serif font-bold text-stone-800 mb-2">Seguridad 24h</h4>
+                    <p class="text-stone-500 text-xs">Personal calificado para velar por tu resguardo permanente.</p>
+                </div>
+            </div>
+
+            <!-- Servicio 4 -->
+            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </span>
+                    <h4 class="font-serif font-bold text-stone-800 mb-2">Eventos Corporativos</h4>
+                    <p class="text-stone-500 text-xs">Espacios e infraestructura aptos para la coordinación de reuniones de negocios.</p>
+                </div>
+            </div>
+
+            <!-- Servicio 5: Alimentación especial para empresas -->
+            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+                    <h4 class="font-serif font-bold text-stone-800 mb-2">Alimentación Grupal</h4>
+                    <p class="text-stone-500 text-xs">Servicio exclusivo de comida bajo solicitud especial para delegaciones y empresas hospedadas.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -261,7 +292,7 @@
                 <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Contacto Directo</span>
                 <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-6">Planifica tu Estadía</h3>
                 <p class="text-stone-600 mb-10 leading-relaxed">
-                    Comunícate directamente con nuestra recepción para asegurar tu habitación. Atendemos solicitudes telefónicas y vía correo electrónico.
+                    Comunícate directamente con nuestra recepción para asegurar tu habitación o solicitar cotizaciones corporativas institucionales.
                 </p>
 
                 <!-- Tarjetas de Datos Reales -->
@@ -305,8 +336,8 @@
                 <form id="reserva-form" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="nombre" class="block text-sm font-medium text-stone-700 mb-2">Nombre Completo</label>
-                            <input type="text" id="nombre" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Ej. Juan Pérez">
+                            <label for="nombre" class="block text-sm font-medium text-stone-700 mb-2">Nombre Completo / Empresa</label>
+                            <input type="text" id="nombre" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Ej. Corporación Lara C.A.">
                         </div>
                         <div>
                             <label for="correo" class="block text-sm font-medium text-stone-700 mb-2">Correo Electrónico</label>
@@ -324,7 +355,7 @@
                             <input type="date" id="salida" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
                         </div>
                         <div>
-                            <label for="habitacion-tipo" class="block text-sm font-medium text-stone-700 mb-2">Tipo de Habitación</label>
+                            <label for="habitacion-tipo" class="block text-sm font-medium text-stone-700 mb-2">Tipo de Hospedaje</label>
                             <select id="habitacion-tipo" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal bg-white transition-all">
                                 <option value="matrimonial">Matrimonial ($25)</option>
                                 <option value="matrimonial-cama">Matrimonial + 1 Cama ($35)</option>
@@ -343,7 +374,7 @@
                     <span class="text-xl text-emerald-500"><i class="fa-solid fa-circle-check"></i></span>
                     <div>
                         <p class="font-bold">¡Solicitud Procesada!</p>
-                        <p class="text-sm">Por favor, comunícate también al número 0251-2526116 para confirmar de inmediato.</p>
+                        <p class="text-sm">Por favor, comunícate también al número 0251-2526116 para confirmar los detalles de inmediato.</p>
                     </div>
                 </div>
             </div>
