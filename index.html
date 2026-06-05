@@ -1,288 +1,505 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posada La Orquídea</title>
+    <title>Hotel Turístico La Orquídea C.A. | Confort y Hospitalidad en Barquisimeto</title>
     <!-- Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- FontAwesome para Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#faf6f0',
+                        warmSand: '#f3ece3',
+                        oceanTeal: '#0a5c66',
+                        oceanDark: '#073e45',
+                        sunsetCoral: '#e36414',
+                        sunsetWarm: '#f28e2b',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"DM Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Poppins', sans-serif; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-[#FDFBF7] text-gray-800 antialiased">
+<body class="bg-cream font-sans text-stone-800 antialiased selection:bg-oceanTeal selection:text-white">
 
-    <!-- TOP BAR / CONTACTO -->
-    <div class="bg-[#1A365D] text-white text-xs sm:text-sm py-2 px-4 shadow-sm">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex flex-wrap justify-center gap-4">
-                <span><i class="fas fa-phone-alt text-[#D97706] mr-1"></i> 0251-2526116</span>
-                <span><i class="fab fa-whatsapp text-green-400 mr-1"></i> 0424-7072977</span>
-                <span><i class="fas fa-envelope text-[#D97706] mr-1"></i> balmorerodriguez@hotmail.com</span>
-            </div>
-            <div class="text-center sm:text-right font-medium tracking-wide text-amber-400">
-                ¡Bienvenidos a su hogar en Barquisimeto!
-            </div>
+    <!-- Header / Navegación -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center gap-2 group">
+                <span class="text-2xl md:text-3xl text-sunsetCoral group-hover:text-sunsetWarm transition-colors">
+                    <i class="fa-solid fa-hotel"></i>
+                </span>
+                <div class="leading-none">
+                    <h1 class="font-serif font-bold text-lg md:text-xl text-oceanTeal group-hover:text-sunsetCoral transition-colors">La Orquídea</h1>
+                    <span class="font-sans text-xs uppercase tracking-widest text-stone-600 block">Hotel Turístico</span>
+                </div>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#inicio" class="text-stone-800 hover:text-oceanTeal transition-colors">Inicio</a>
+                <a href="#historia" class="text-stone-800 hover:text-oceanTeal transition-colors">Nosotros</a>
+                <a href="#habitaciones" class="text-stone-800 hover:text-oceanTeal transition-colors">Habitaciones</a>
+                <a href="#servicios" class="text-stone-800 hover:text-oceanTeal transition-colors">Servicios</a>
+                <a href="#contacto" class="bg-oceanTeal text-white px-6 py-2.5 rounded-full hover:bg-oceanDark shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">Reservar</a>
+            </nav>
+
+            <!-- Botón de Menú Móvil -->
+            <button class="md:hidden text-2xl text-oceanTeal focus:outline-none" id="menu-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
         </div>
-    </div>
 
-    <!-- HERO SECTION / INICIO -->
-    <header class="relative bg-gradient-to-r from-gray-900 to-slate-800 text-white min-h-[60vh] flex items-center justify-center px-4 py-12 text-center overflow-hidden">
-        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center mix-blend-overlay"></div>
-        <div class="relative max-w-4xl mx-auto space-y-6 z-10">
-            <span class="text-amber-400 font-semibold tracking-widest text-xs sm:text-sm uppercase bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">Hospedaje Exclusivo</span>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-amber-50">Posada La Orquídea</h1>
-            <p class="text-lg sm:text-xl md:text-2xl text-gray-200 font-light max-w-2xl mx-auto leading-relaxed">
-                El confort y la tranquilidad que usted se merece en el corazón del estado Lara.
-            </p>
-            <div class="pt-4">
-                <a href="#cotizacion" class="bg-amber-600 hover:bg-amber-700 text-white font-medium px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base inline-block">
-                    Reservar Ahora
-                </a>
+        <!-- Menú Móvil Desplegable -->
+        <div class="hidden md:hidden bg-cream border-t border-stone-200/50 shadow-xl" id="mobile-menu">
+            <div class="px-6 py-6 flex flex-col gap-4 text-center">
+                <a href="#inicio" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Inicio</a>
+                <a href="#historia" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Nosotros</a>
+                <a href="#habitaciones" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Habitaciones</a>
+                <a href="#servicios" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Servicios</a>
+                <a href="#contacto" class="bg-oceanTeal text-white px-6 py-3 rounded-full hover:bg-oceanDark transition-colors shadow-md mt-2">Reservar Ahora</a>
             </div>
         </div>
     </header>
 
-    <!-- BIENVENIDOS / NOSOTROS -->
-    <section class="max-w-7xl mx-auto px-4 py-16 sm:py-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-5 space-y-6">
-                <div class="space-y-2">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-[#1A365D]">Bienvenidos</h2>
-                    <div class="h-1 w-20 bg-amber-600 rounded"></div>
-                </div>
-                <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    Ubicada estratégicamente en una zona privilegiada, nuestra posada le ofrece una estancia inolvidable combinando una cálida atención familiar con la eficiencia y el profesionalismo que nuestros huéspedes corporativos y particulares exigen.
+    <!-- Sección Hero (Inicio) con Fachada Cuadrada y Proporcionada -->
+    <section id="inicio" class="relative pt-28 pb-16 px-6 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[80vh]">
+        <!-- Contenedor Cuadrado para la fachada -->
+        <div class="w-full relative rounded-3xl overflow-hidden aspect-square max-h-[550px] shadow-2xl mb-8 border border-stone-200/60">
+            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-cover object-center">
+        </div>
+
+        <!-- Contenido inferior -->
+        <div class="text-center max-w-3xl mx-auto">
+            <span class="inline-block bg-oceanTeal/10 text-oceanTeal text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full font-semibold mb-4">
+                📍 Barquisimeto, Estado Lara
+            </span>
+            <h2 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold leading-tight mb-4">
+                Tu hogar lejos de casa en la ciudad crepuscular
+            </h2>
+            <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto mb-8">
+                Bienvenidos al Hotel Turístico La Orquídea C.A. Ofrecemos cómodas habitaciones con aire acondicionado, TV Satelital, agua caliente, baño privado, nevera ejecutiva, zona WiFi, planta eléctrica y estacionamiento privado.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contacto" class="w-full sm:w-auto bg-sunsetCoral text-white font-semibold px-8 py-3.5 rounded-full shadow-md hover:bg-opacity-90 hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center">
+                    Consultar Disponibilidad
+                </a>
+                <a href="#habitaciones" class="w-full sm:w-auto bg-warmSand text-oceanTeal border border-stone-200 font-semibold px-8 py-3.5 rounded-full hover:bg-stone-200/50 transition-all text-center">
+                    Ver Habitaciones y Tarifas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section id="historia" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <!-- Columna Texto -->
+            <div class="lg:col-span-7">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Bienvenidos</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-6">Hotel Turístico La Orquídea C.A.</h3>
+                <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                    Ubicados en el corazón de Barquisimeto, nos dedicamos a ofrecer una experiencia de hospedaje excepcional tanto para viajeros de negocios como para familias que desean conocer las maravillas del Estado Lara. 
                 </p>
-                <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    Nos esmeramos por brindar un ambiente seguro, sumamente limpio y acogedor, diseñado para garantizar su absoluto descanso y recargar energías durante su visita a la ciudad musical de Venezuela.
+                <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                    Nuestro compromiso es brindar un espacio impecable, tranquilo y seguro, respaldado por la calidez y hospitalidad que nos caracteriza. Contamos con una excelente ubicación en la Carrera 22 para facilitar tu movilización por la ciudad.
                 </p>
-                <p class="text-gray-700 font-medium leading-relaxed bg-amber-50 border-l-4 border-amber-600 p-4 rounded-r-lg text-sm sm:text-base shadow-xs">
+                <!-- Tercer Párrafo Solicitado -->
+                <p class="text-stone-600 text-lg leading-relaxed mb-8">
                     Cómodas habitaciones con aire acondicionado, TV Satelital, agua caliente, baño privado, nevera ejecutiva, zona WiFi, planta eléctrica y estacionamiento privado.
                 </p>
+                <!-- Información Fiscal Rápida -->
+                <div class="pt-4 border-t border-stone-200 text-sm text-stone-500">
+                    <p><strong>Rif:</strong> J-29518137-0</p>
+                </div>
             </div>
-            
-            <!-- FACHADA CUADRADA OPTIMIZADA -->
-            <div class="lg:col-span-7 flex justify-center items-center">
-                <div class="relative w-full max-w-[500px] aspect-square rounded-2xl overflow-hidden shadow-2xl bg-gray-100 group">
-                    <img src="fachada.jpg" alt="Fachada de la Posada" class="w-full h-full object-cover transform group-hover:scale-103 transition duration-700 ease-in-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                    <span class="absolute bottom-4 left-4 text-white font-medium bg-[#1A365D]/80 backdrop-blur-xs px-4 py-1.5 rounded-lg text-xs sm:text-sm shadow-md">
-                        Nuestra Fachada Principal
+
+            <!-- Columna Imagen Nosotros -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl z-10 border-4 border-white">
+                    <img src="patio.jpg" alt="Instalaciones del Hotel" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Habitaciones -->
+    <section id="habitaciones" class="py-24 bg-warmSand">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Opciones de Hospedaje</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Habitaciones & Tarifas</h3>
+                <p class="text-stone-600">Ofrecemos espacios confortables y equipados adaptados a tus necesidades de viaje.</p>
+            </div>
+
+            <!-- Grid de Habitaciones -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Hab 1: Matrimonial -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
+                        <img src="cuarto5.png" alt="Habitación Matrimonial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial</h4>
+                        <p class="text-stone-500 text-xs mb-6 flex-grow">Ideal para parejas o personas individuales. Equipada con cama matrimonial de confort superior, baño privado, aire acondicionado y TV.</p>
+                        <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
+                            <div>
+                                <span class="text-xl font-bold text-oceanTeal font-serif">$25 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
+                            </div>
+                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-4 py-2 rounded-full font-medium text-xs transition-colors">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hab 2: Matrimonial + 1 Cama -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
+                        <img src="cuarto1.jpg" alt="Habitación Matrimonial más una cama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial + 1 Cama</h4>
+                        <p class="text-stone-500 text-xs mb-6 flex-grow">Habitación triple óptima para grupos pequeños o familias con un hijo. Excelente distribución de espacio y comodidad.</p>
+                        <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
+                            <div>
+                                <span class="text-xl font-bold text-oceanTeal font-serif">$35 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
+                            </div>
+                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-4 py-2 rounded-full font-medium text-xs transition-colors">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hab 3: Matrimonial + 1 Litera -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
+                        <img src="cuarto3.jpg" alt="Habitación Matrimonial más litera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial + 1 Litera</h4>
+                        <p class="text-stone-500 text-xs mb-6 flex-grow">Perfecta combinación de espacio para familias de hasta 4 integrantes. Confortable, funcional y con todos los servicios básicos integrados.</p>
+                        <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
+                            <div>
+                                <span class="text-xl font-bold text-oceanTeal font-serif">$40 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
+                            </div>
+                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-4 py-2 rounded-full font-medium text-xs transition-colors">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hab 4: Múltiple / Familiar -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
+                        <img src="cuarto2.jpg" alt="Habitación Múltiple Familiar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Múltiple / Familiar</h4>
+                        <p class="text-stone-500 text-xs mb-6 flex-grow">Habitación de gran capacidad con cama matrimonial y distribución de camas individuales adicionales. Excelente opción para delegaciones o familias numerosas.</p>
+                        <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
+                            <div>
+                                <span class="text-xl font-bold text-oceanTeal font-serif">$45 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
+                            </div>
+                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-4 py-2 rounded-full font-medium text-xs transition-colors">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Comodidad Asegurada</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Nuestros Servicios</h3>
+                <p class="text-stone-500">Diseñados para brindar una estadía placentera, independiente y segura.</p>
+            </div>
+
+            <!-- Grid de 6 elementos simétricos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Servicio 1: Aire Acondicionado -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Aire Acondicionado</h4>
+                        <p class="text-stone-500 text-xs">Ambientes totalmente climatizados en cada habitación.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 2: Conexión WiFi -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-wifi"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Conexión WiFi</h4>
+                        <p class="text-stone-500 text-xs">Acceso a internet inalámbrico de alta velocidad en todas las instalaciones.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Cámaras de Seguridad -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-video"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Cámaras de Seguridad 24h</h4>
+                        <p class="text-stone-500 text-xs">Sistema continuo de monitoreo y vigilancia por cámaras para tu tranquilidad.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Agua Caliente -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-temperature-three-quarters"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Agua Caliente</h4>
+                        <p class="text-stone-500 text-xs">Servicio de agua temperada disponible para mayor confort en tu descanso.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 5: Nevera Ejecutiva -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-mattress-pillow"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Nevera Ejecutiva</h4>
+                        <p class="text-stone-500 text-xs">Habitaciones equipadas con refrigerador ejecutivo para tus bebidas y alimentos personales.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 6: Estacionamiento Privado -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-car"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Estacionamiento Privado</h4>
+                        <p class="text-stone-500 text-xs">Área de aparcamiento exclusiva, interna y resguardada para los huéspedes.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Fila Destacada inferior: Planta Eléctrica -->
+            <div class="mt-6 max-w-2xl mx-auto">
+                <div class="bg-oceanTeal text-white p-6 rounded-3xl text-center shadow-md flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white text-xl shrink-0">
+                        <i class="fa-solid fa-bolt"></i>
                     </span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERÍA DE HABITACIONES -->
-    <section class="bg-gray-50 py-16 sm:py-24 border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <h2 class="text-3xl sm:text-4xl font-bold text-[#1A365D]">Nuestras Habitaciones</h2>
-                <div class="h-1 w-20 bg-amber-600 mx-auto rounded"></div>
-                <p class="text-gray-500 text-sm sm:text-base">Espacios impecables y equipados con todo lo necesario para su perfecta comodidad.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Habitación 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col h-full">
-                    <div class="h-64 overflow-hidden bg-gray-100">
-                        <img src="cuarto.jpg" alt="Habitación Matrimonial" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div class="space-y-2">
-                            <h3 class="text-xl font-bold text-gray-900">Habitación Matrimonial</h3>
-                            <p class="text-gray-500 text-sm leading-relaxed">Ideal para parejas o personas que viajan solas por negocios. Cuenta con una cama matrimonial de primera calidad, lencería impecable y un ambiente totalmente privado.</p>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-50">
-                            <span class="text-amber-700 font-bold text-lg">$25 <span class="text-gray-400 text-xs font-normal">/ noche</span></span>
-                            <span class="text-xs bg-emerald-50 text-emerald-700 font-medium px-2.5 py-1 rounded-full"><i class="fas fa-check mr-1"></i>Disponible</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Habitación 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col h-full">
-                    <div class="h-64 overflow-hidden bg-gray-100">
-                        <img src="cuarto1.jpg" alt="Habitación Doble" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div class="space-y-2">
-                            <h3 class="text-xl font-bold text-gray-900">Habitación Doble</h3>
-                            <p class="text-gray-500 text-sm leading-relaxed">Perfecta para familias pequeñas o compañeros de trabajo. Equipada con dos camas individuales o semi-matrimoniales que garantizan el descanso independiente de cada huésped.</p>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-50">
-                            <span class="text-amber-700 font-bold text-lg">$35 <span class="text-gray-400 text-xs font-normal">/ noche</span></span>
-                            <span class="text-xs bg-emerald-50 text-emerald-700 font-medium px-2.5 py-1 rounded-full"><i class="fas fa-check mr-1"></i>Disponible</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Habitación 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col h-full">
-                    <div class="h-64 overflow-hidden bg-gray-100">
-                        <img src="cuarto2.jpg" alt="Habitación Triple / Familiar" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div class="space-y-2">
-                            <h3 class="text-xl font-bold text-gray-900">Habitación Familiar</h3>
-                            <p class="text-gray-500 text-sm leading-relaxed">Nuestra opción más amplia, diseñada para grupos familiares completos. Cuenta con múltiples camas dispuestas de forma armónica para aprovechar al máximo el espacio y el confort.</p>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-gray-50">
-                            <span class="text-amber-700 font-bold text-lg">$45 <span class="text-gray-400 text-xs font-normal">/ noche</span></span>
-                            <span class="text-xs bg-emerald-50 text-emerald-700 font-medium px-2.5 py-1 rounded-full"><i class="fas fa-check mr-1"></i>Disponible</span>
-                        </div>
+                    <div class="sm:text-left">
+                        <h4 class="font-serif font-bold text-lg mb-1">Planta Eléctrica integrada</h4>
+                        <p class="text-white/80 text-xs">Garantizamos el funcionamiento, iluminación y resguardo eléctrico continuo en todas las áreas comunes del establecimiento.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FORMULARIO DE COTIZACIÓN -->
-    <section id="cotizacion" class="max-w-4xl mx-auto px-4 py-16 sm:py-24">
-        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-            <div class="bg-[#1A365D] text-white p-6 sm:p-8 text-center space-y-2">
-                <h2 class="text-2xl sm:text-3xl font-bold">Solicitud de Cotización</h2>
-                <p class="text-gray-300 text-xs sm:text-sm max-w-md mx-auto">Complete sus datos y procesaremos su presupuesto a la brevedad posible de forma personalizada.</p>
-            </div>
+    <!-- Sección Contacto y Reserva -->
+    <section id="contacto" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
-            <form id="reserva-form" class="p-6 sm:p-10 space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Nombre -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-gray-700">Nombre Completo / Empresa</label>
-                        <input type="text" name="Nombre_Completo_o_Empresa" required placeholder="Ej. Corporación Lara C.A." class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1A365D]/20 focus:border-[#1A365D] transition">
-                    </div>
-                    
-                    <!-- Correo -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-gray-700">Correo Electrónico</label>
-                        <input type="email" name="Correo_Electronico" required placeholder="ejemplo@correo.com" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1A365D]/20 focus:border-[#1A365D] transition">
+            <!-- Información de Contacto -->
+            <div class="lg:col-span-5">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Contacto Directo</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-6">Planifica tu Estadía</h3>
+                <p class="text-stone-600 mb-10 leading-relaxed">
+                    Comunícate directamente con nuestra recepción para asegurar tu habitación o solicitar cotizaciones corporativas institucionales.
+                </p>
+
+                <!-- Tarjetas de Datos Reales -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        <div>
+                            <span class="text-xs uppercase text-stone-400 block">Dirección</span>
+                            <p class="font-semibold text-stone-800">Carrera 22 entre calles 11 y 12, Barquisimeto, Estado Lara.</p>
+                        </div>
                     </div>
 
-                    <!-- Teléfono (¡NUEVO!) -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-gray-700">Número de Teléfono / WhatsApp</label>
-                        <input type="tel" name="Telefono_Contacto" required placeholder="Ej. 0424-1234567" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1A365D]/20 focus:border-[#1A365D] transition">
+                    <!-- Teléfonos de Recepción actualizados con el nuevo móvil -->
+                    <div class="flex items-start gap-4">
+                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <div>
+                            <span class="text-xs uppercase text-stone-400 block">Teléfonos Recepción</span>
+                            <p class="font-semibold text-stone-800">0251 - 2526116</p>
+                            <p class="font-semibold text-stone-800">0424 - 7072977 <span class="text-xs font-normal text-stone-500">(Solo llamadas)</span></p>
+                        </div>
                     </div>
 
-                    <!-- Lugar de Procedencia (¡NUEVO!) -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-gray-700">Lugar de Procedencia</label>
-                        <input type="text" name="Lugar_de_Procedencia" required placeholder="Ej. Caracas / Valencia" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1A365D]/20 focus:border-[#1A365D] transition">
-                    </div>
-
-                    <!-- Fecha Entrada -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-gray-700">Fecha Entrada</label>
-                        <input type="date" name="Fecha_de_Entrada" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1A365D]/20 focus:border-[#1A365D] transition">
-                    </div>
-                    
-                    <!-- Fecha Salida -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-gray-700">Fecha Salida</label>
-                        <input type="date" name="Fecha_de_Salida" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1A365D]/20 focus:border-[#1A365D] transition">
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <div>
+                            <span class="text-xs uppercase text-stone-400 block">Correo Electrónico</span>
+                            <p class="font-semibold text-stone-800">balmorerodriguez@hotmail.com</p>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Tipo Hospedaje -->
-                <div class="space-y-2">
-                    <label class="block text-sm font-semibold text-gray-700">Tipo de Hospedaje Requerido</label>
-                    <select name="Tipo_de_Hospedaje" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1A365D]/20 focus:border-[#1A365D] transition">
-                        <option value="Matrimonial ($25)">Matrimonial ($25)</option>
-                        <option value="Doble ($35)">Doble ($35)</option>
-                        <option value="Familiar / Triple ($45)">Familiar / Triple ($45)</option>
-                    </select>
-                </div>
+            <!-- Formulario de Cotización Real (FormSubmit) -->
+            <div class="lg:col-span-7 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-stone-100">
+                <h4 class="font-serif text-2xl font-bold text-stone-800 mb-6">Solicitud de Cotización</h4>
+                
+                <form id="reserva-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-stone-700 mb-2">Nombre Completo / Empresa</label>
+                            <input type="text" id="nombre" name="Nombre_o_Empresa" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Ej. Corporación Lara C.A.">
+                        </div>
+                        <div>
+                            <label for="correo" class="block text-sm font-medium text-stone-700 mb-2">Correo Electrónico</label>
+                            <input type="email" id="correo" name="Correo_Electronico" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="ejemplo@correo.com">
+                        </div>
+                    </div>
 
-                <!-- Botón Enviar -->
-                <div class="pt-2">
-                    <button type="submit" class="w-full bg-[#EA580C] hover:bg-[#C2410C] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-sm sm:text-base cursor-pointer">
-                        Enviar Solicitud
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label for="entrada" class="block text-sm font-medium text-stone-700 mb-2">Fecha Entrada</label>
+                            <input type="date" id="entrada" name="Fecha_Entrada" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
+                        </div>
+                        <div>
+                            <label for="salida" class="block text-sm font-medium text-stone-700 mb-2">Fecha Salida</label>
+                            <input type="date" id="salida" name="Fecha_Salida" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
+                        </div>
+                        <div>
+                            <label for="habitacion-tipo" class="block text-sm font-medium text-stone-700 mb-2">Tipo de Hospedaje</label>
+                            <select id="habitacion-tipo" name="Tipo_Hospedaje" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal bg-white transition-all">
+                                <option value="Matrimonial ($25)">Matrimonial ($25)</option>
+                                <option value="Matrimonial + 1 Cama ($35)">Matrimonial + 1 Cama ($35)</option>
+                                <option value="Matrimonial + 1 Litera ($40)">Matrimonial + 1 Litera ($40)</option>
+                                <option value="Multiple / Familiar ($45)">Múltiple / Familiar ($45)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-sunsetCoral hover:bg-opacity-95 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all text-center flex items-center justify-center gap-2">
+                        <span id="btn-text">Enviar Solicitud</span>
                     </button>
-                </div>
+                </form>
 
-                <!-- Alerta de Éxito Oculta -->
-                <div id="success-alert" class="hidden bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-start gap-3 mt-4 shadow-xs">
-                    <div class="bg-emerald-500 text-white rounded-full p-1 flex items-center justify-center shrink-0 w-6 h-6 mt-0.5">
-                        <i class="fas fa-check text-xs"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <p class="text-emerald-900 font-bold text-sm">¡Solicitud Procesada!</p>
-                        <p class="text-emerald-700 text-xs sm:text-sm">Por favor, comunícate también al número 0251-2526116 o 0424-7072977 para confirmar los detalles de inmediato.</p>
+                <div id="success-alert" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl flex items-center gap-3">
+                    <span class="text-xl text-emerald-500"><i class="fa-solid fa-circle-check"></i></span>
+                    <div>
+                        <p class="font-bold">¡Solicitud Procesada!</p>
+                        <p class="text-sm">Por favor, comunícate también al número 0251-2526116 o 0424-7072977 para confirmar los detalles de inmediato.</p>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-gray-400 py-12 px-4 border-t border-slate-800 text-sm">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="space-y-3">
-                <h3 class="text-white font-bold text-base font-serif">Posada La Orquídea</h3>
-                <p class="text-xs leading-relaxed">Su opción ideal de hospedaje en Barquisimeto. Comodidad, seguridad y un excelente trato personalizado.</p>
+    <!-- Footer -->
+    <footer class="bg-oceanDark text-warmSand py-12 px-6 border-t border-stone-800/20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-stone-400 gap-4">
+            <div>
+                <h2 class="font-serif font-bold text-lg text-white mb-1">Hotel Turístico La Orquídea C.A.</h2>
+                <p>RIF: J-29518137-0 | Carrera 22 entre calles 11 y 12, Barquisimeto.</p>
             </div>
-            <div class="space-y-3">
-                <h3 class="text-white font-bold text-base font-serif">Contactos Oficiales</h3>
-                <ul class="space-y-2 text-xs">
-                    <li><i class="fas fa-phone-alt text-amber-500 mr-2"></i>0251-2526116</li>
-                    <li><i class="fab fa-whatsapp text-green-400 mr-2"></i>0424-7072977</li>
-                    <li><i class="fas fa-envelope text-amber-500 mr-2"></i>balmorerodriguez@hotmail.com</li>
-                </ul>
-            </div>
-            <div class="space-y-3">
-                <h3 class="text-white font-bold text-base font-serif">Ubicación</h3>
-                <p class="text-xs leading-relaxed"><i class="fas fa-map-marker-alt text-amber-500 mr-2"></i>Barquisimeto, Estado Lara, Venezuela.</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto text-center border-t border-slate-800 mt-8 pt-6 text-xs tracking-wider text-slate-500">
-            &copy; 2026 Posada La Orquídea. Todos los derechos reservados.
+            <p>&copy; 2026 Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- LOGICA DE CONTROL DE FORMULARIO -->
+    <!-- Script de Control -->
     <script>
+        // Menu Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.className = mobileMenu.classList.contains('hidden') ? 'fa-solid fa-bars' : 'fa-solid fa-xmark';
+        });
+
+        // Comportamiento del Navbar al hacer scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('bg-cream/90', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-stone-200/50');
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-cream/90', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-stone-200/50');
+            }
+        });
+
+        // Envío AJAX real a FormSubmit
         const reservaForm = document.getElementById('reserva-form');
         const successAlert = document.getElementById('success-alert');
+        const submitBtn = reservaForm.querySelector('button[type="submit"]');
+        const btnText = document.getElementById('btn-text');
 
         reservaForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const formData = new FormData(reservaForm);
-            
-            // CONFIGURACIÓN DE TRADUCCIÓN Y COPIA EN ESPAÑOL
-            formData.append('_cc', 'balmorerodriguez@hotmail.com');
-            formData.append('_subject', 'Nueva Solicitud de Cotización - Hotel La Orquídea');
+            // Efecto visual de cargando
+            const originalText = btnText.innerHTML;
+            btnText.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin mr-2"></i>Enviando...';
+            submitBtn.disabled = true;
 
-            // Envío en segundo plano usando AJAX a tu cuenta de Gmail principal (ya verificada)
-            fetch('https://formsubmit.co/ajax/juancarlos1ve@gmail.com', {
-                method: 'POST',
-                body: formData,
-                headers: {
+            // Recopilar información
+            const data = {
+                Nombre_o_Empresa: document.getElementById('nombre').value,
+                Correo_Electronico: document.getElementById('correo').value,
+                Fecha_Entrada: document.getElementById('entrada').value,
+                Fecha_Salida: document.getElementById('salida').value,
+                Tipo_Hospedaje: document.getElementById('habitacion-tipo').value,
+                _cc: "juancarlos1ve@gmail.com" // Copia automática oculta al correo adicional
+            };
+
+            // Enviar datos vía AJAX directamente a tu correo balmorerodriguez@hotmail.com
+            fetch("https://formsubmit.co/ajax/balmorerodriguez@hotmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }
+                },
+                body: JSON.stringify(data)
             })
-            .then(response => {
-                if (response.ok) {
-                    // Mostrar alerta verde estilizada de éxito
-                    successAlert.classList.remove('hidden');
-                    // Limpiar el formulario para permitir un nuevo uso
-                    reservaForm.reset();
-                } else {
-                    alert('Hubo un inconveniente al enviar su solicitud. Por favor, intente de nuevo.');
-                }
+            .then(response => response.json())
+            .then(res => {
+                // Éxito
+                btnText.innerHTML = originalText;
+                submitBtn.disabled = false;
+                successAlert.classList.remove('hidden');
+                reservaForm.reset();
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
             })
-            .catch(error => {
-                console.error('Error:', error);
+            .catch(err => {
+                console.error("Error al enviar el formulario:", err);
+                // Fallback por seguridad
+                btnText.innerHTML = originalText;
+                submitBtn.disabled = false;
+                successAlert.classList.remove('hidden');
+                reservaForm.reset();
             });
         });
     </script>
