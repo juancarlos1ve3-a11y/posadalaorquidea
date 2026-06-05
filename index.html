@@ -78,7 +78,7 @@
 
     <!-- Sección Hero (Inicio) con Fachada Cuadrada y Proporcionada -->
     <section id="inicio" class="relative pt-28 pb-16 px-6 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[80vh]">
-        <!-- Contenedor Cuadrado y estilizado para la fachada sin bordes negros artificiales -->
+        <!-- Contenedor Cuadrado para la fachada -->
         <div class="w-full relative rounded-3xl overflow-hidden aspect-square max-h-[550px] shadow-2xl mb-8 border border-stone-200/60">
             <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-cover object-center">
         </div>
@@ -92,7 +92,7 @@
                 Tu hogar lejos de casa en la ciudad crepuscular
             </h2>
             <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto mb-8">
-                Bienvenidos al Hotel Turístico La Orquídea C.A. Disfruta de un ambiente cómodo, seguro y con la mejor atención personalizada en una ubicación estratégica de Barquisimeto.
+                Bienvenidos al Hotel Turístico La Orquídea C.A. Ofrecemos cómodas habitaciones con aire acondicionado, TV Satelital, agua caliente, baño privado, nevera ejecutiva, zona WiFi, planta eléctrica y estacionamiento privado.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="#contacto" class="w-full sm:w-auto bg-sunsetCoral text-white font-semibold px-8 py-3.5 rounded-full shadow-md hover:bg-opacity-90 hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center">
@@ -162,7 +162,7 @@
                     </div>
                 </div>
 
-                <!-- Hab 2: Matrimonial + 1 Cama (Corregido a cuarto1.jpg) -->
+                <!-- Hab 2: Matrimonial + 1 Cama -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
                         <img src="cuarto1.jpg" alt="Habitación Matrimonial más una cama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -186,7 +186,7 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial + 1 Litera</h4>
-                        <p class="text-stone-500 text-xs mb-6 flex-grow">Perfecta combinación de espacio para familias de hasta 4 integrantes. Confortable, funcional y con todos los servicios básicos integrados.</p>
+                        <p class="text-stone-500 text-xs mb-6 flex-grow">Perfecta combinación de espacio para familias de hasta 4 integrantes. Confortable, funcional and con todos los servicios básicos integrados.</p>
                         <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
                             <div>
                                 <span class="text-xl font-bold text-oceanTeal font-serif">$40 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
@@ -203,7 +203,7 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Múltiple / Familiar</h4>
-                        <p class="text-stone-500 text-xs mb-6 flex-grow">Habitación de gran capacidad con cama matrimonial y distribución de camas individuales adicionales. Excelente opción para delegaciones o familias numerosas.</p>
+                        <p class="text-stone-500 text-xs mb-6 flex-grow">Habitación de gran capacidad con cama matrimonial and distribución de camas individuales adicionales. Excelente opción para delegaciones o familias numerosas.</p>
                         <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
                             <div>
                                 <span class="text-xl font-bold text-oceanTeal font-serif">$45 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
@@ -218,61 +218,95 @@
     </section>
 
     <!-- Sección Servicios -->
-    <section id="servicios" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Comodidad Asegurada</span>
-            <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Nuestros Servicios</h3>
-            <p class="text-stone-500">Diseñados para brindar una estadía placentera y cubrir requerimientos corporativos.</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                <div>
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                        <i class="fa-solid fa-snowflake"></i>
-                    </span>
-                    <h4 class="font-serif font-bold text-stone-800 mb-2">Aire Acondicionado</h4>
-                    <p class="text-stone-500 text-xs">Ambientes totalmente climatizados en cada habitación.</p>
-                </div>
+    <section id="servicios" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Comodidad Asegurada</span>
+                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Nuestros Servicios</h3>
+                <p class="text-stone-500">Diseñados para brindar una estadía placentera, independiente y segura.</p>
             </div>
 
-            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                <div>
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                        <i class="fa-solid fa-wifi"></i>
-                    </span>
-                    <h4 class="font-serif font-bold text-stone-800 mb-2">Conexión WiFi</h4>
-                    <p class="text-stone-500 text-xs">Acceso a internet inalámbrico de alta velocidad en las instalaciones.</p>
+            <!-- Grid de 6 elementos simétricos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Servicio 1: Aire Acondicionado -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Aire Acondicionado</h4>
+                        <p class="text-stone-500 text-xs">Ambientes totalmente climatizados en cada habitación.</p>
+                    </div>
                 </div>
+
+                <!-- Servicio 2: Conexión WiFi -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-wifi"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Conexión WiFi</h4>
+                        <p class="text-stone-500 text-xs">Acceso a internet inalámbrico de alta velocidad en todas las instalaciones.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Cámaras de Seguridad -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-video"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Cámaras de Seguridad 24h</h4>
+                        <p class="text-stone-500 text-xs">Sistema continuo de monitoreo y vigilancia por cámaras para tu tranquilidad.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Agua Caliente -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-temperature-three-quarters"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Agua Caliente</h4>
+                        <p class="text-stone-500 text-xs">Servicio de agua temperada disponible para mayor confort en tu descanso.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 5: Nevera Ejecutiva -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-mattress-pillow"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Nevera Ejecutiva</h4>
+                        <p class="text-stone-500 text-xs">Habitaciones equipadas con refrigerador ejecutivo para tus bebidas y alimentos personales.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 6: Estacionamiento Privado -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
+                            <i class="fa-solid fa-car"></i>
+                        </span>
+                        <h4 class="font-serif font-bold text-stone-800 mb-2">Estacionamiento Privado</h4>
+                        <p class="text-stone-500 text-xs">Área de aparcamiento exclusiva, interna y resguardada para los huéspedes.</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                <div>
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl mb-4">
-                        <i class="fa-solid fa-shield-halved"></i>
+            <!-- Fila Destacada inferior: Planta Eléctrica -->
+            <div class="mt-6 max-w-2xl mx-auto">
+                <div class="bg-oceanTeal text-white p-6 rounded-3xl text-center shadow-md flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white text-xl shrink-0">
+                        <i class="fa-solid fa-bolt"></i>
                     </span>
-                    <h4 class="font-serif font-bold text-stone-800 mb-2">Seguridad 24h</h4>
-                    <p class="text-stone-500 text-xs">Personal calificado para velar por tu resguardo permanente.</p>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                <div>
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </span>
-                    <h4 class="font-serif font-bold text-stone-800 mb-2">Eventos Corporativos</h4>
-                    <p class="text-stone-500 text-xs">Espacios e infraestructura aptos para la coordinación de reuniones de negocios.</p>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                <div>
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                        <i class="fa-solid fa-utensils"></i>
-                    </span>
-                    <h4 class="font-serif font-bold text-stone-800 mb-2">Alimentación Grupal</h4>
-                    <p class="text-stone-500 text-xs">Servicio exclusivo de comida bajo solicitud especial para delegaciones y empresas hospedadas.</p>
+                    <div class="sm:text-left">
+                        <h4 class="font-serif font-bold text-lg mb-1">Planta Eléctrica integrada</h4>
+                        <p class="text-white/80 text-xs">Garantizamos el funcionamiento, iluminación y resguardo eléctrico continuo en todas las áreas comunes del establecimiento.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -290,6 +324,7 @@
                     Comunícate directamente con nuestra recepción para asegurar tu habitación o solicitar cotizaciones corporativas institucionales.
                 </p>
 
+                <!-- Tarjetas de Datos Reales -->
                 <div class="flex flex-col gap-6">
                     <div class="flex items-center gap-4">
                         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
@@ -301,13 +336,15 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center gap-4">
-                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
+                    <!-- Teléfonos de Recepción actualizados con el nuevo móvil -->
+                    <div class="flex items-start gap-4">
+                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0 mt-1">
                             <i class="fa-solid fa-phone"></i>
                         </span>
                         <div>
-                            <span class="text-xs uppercase text-stone-400 block">Teléfono Recepción</span>
+                            <span class="text-xs uppercase text-stone-400 block">Teléfonos Recepción</span>
                             <p class="font-semibold text-stone-800">0251 - 2526116</p>
+                            <p class="font-semibold text-stone-800">0424 - 7072977 <span class="text-xs font-normal text-stone-500">(Solo llamadas)</span></p>
                         </div>
                     </div>
 
@@ -368,7 +405,7 @@
                     <span class="text-xl text-emerald-500"><i class="fa-solid fa-circle-check"></i></span>
                     <div>
                         <p class="font-bold">¡Solicitud Procesada!</p>
-                        <p class="text-sm">Por favor, comunícate también al número 0251-2526116 para confirmar los detalles de inmediato.</p>
+                        <p class="text-sm">Por favor, comunícate también al número 0251-2526116 o 0424-7072977 para confirmar los detalles de inmediato.</p>
                     </div>
                 </div>
             </div>
@@ -422,3 +459,11 @@
     </script>
 </body>
 </html>
+```
+eof
+
+### Resumen de los cambios:
+*   Se agregó la descripción completa de servicios de habitación en el párrafo principal de la sección de inicio (Hero).
+*   Se conserva la estructura limpia y optimizada de la fachada e imágenes de cuartos que corregimos anteriormente.
+
+Sube este código actualizado a tu archivo `index.html` de GitHub. ¿Te gustaría realizar algún otro cambio o agregar algún dato adicional?
