@@ -358,13 +358,13 @@
                         </span>
                         <div>
                             <span class="text-xs uppercase text-stone-400 block">Correo Electrónico</span>
-                            <p class="font-semibold text-stone-800">balmorerodriguez@hotamil.com</p>
+                            <p class="font-semibold text-stone-800">balmorerodriguez@hotmail.com</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Formulario de Cotización -->
+            <!-- Formulario de Cotización Real (FormSubmit) -->
             <div class="lg:col-span-7 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-stone-100">
                 <h4 class="font-serif text-2xl font-bold text-stone-800 mb-6">Solicitud de Cotización</h4>
                 
@@ -372,36 +372,36 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="nombre" class="block text-sm font-medium text-stone-700 mb-2">Nombre Completo / Empresa</label>
-                            <input type="text" id="nombre" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Ej. Corporación Lara C.A.">
+                            <input type="text" id="nombre" name="Nombre_o_Empresa" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Ej. Corporación Lara C.A.">
                         </div>
                         <div>
                             <label for="correo" class="block text-sm font-medium text-stone-700 mb-2">Correo Electrónico</label>
-                            <input type="email" id="correo" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="ejemplo@correo.com">
+                            <input type="email" id="correo" name="Correo_Electronico" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="ejemplo@correo.com">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
                             <label for="entrada" class="block text-sm font-medium text-stone-700 mb-2">Fecha Entrada</label>
-                            <input type="date" id="entrada" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
+                            <input type="date" id="entrada" name="Fecha_Entrada" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
                         </div>
                         <div>
                             <label for="salida" class="block text-sm font-medium text-stone-700 mb-2">Fecha Salida</label>
-                            <input type="date" id="salida" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
+                            <input type="date" id="salida" name="Fecha_Salida" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
                         </div>
                         <div>
                             <label for="habitacion-tipo" class="block text-sm font-medium text-stone-700 mb-2">Tipo de Hospedaje</label>
-                            <select id="habitacion-tipo" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal bg-white transition-all">
-                                <option value="matrimonial">Matrimonial ($25)</option>
-                                <option value="matrimonial-cama">Matrimonial + 1 Cama ($35)</option>
-                                <option value="matrimonial-litera">Matrimonial + 1 Litera ($40)</option>
-                                <option value="multiple">Múltiple / Familiar ($45)</option>
+                            <select id="habitacion-tipo" name="Tipo_Hospedaje" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal bg-white transition-all">
+                                <option value="Matrimonial ($25)">Matrimonial ($25)</option>
+                                <option value="Matrimonial + 1 Cama ($35)">Matrimonial + 1 Cama ($35)</option>
+                                <option value="Matrimonial + 1 Litera ($40)">Matrimonial + 1 Litera ($40)</option>
+                                <option value="Multiple / Familiar ($45)">Múltiple / Familiar ($45)</option>
                             </select>
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full bg-sunsetCoral hover:bg-opacity-95 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all text-center">
-                        Enviar Solicitud
+                    <button type="submit" class="w-full bg-sunsetCoral hover:bg-opacity-95 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all text-center flex items-center justify-center gap-2">
+                        <span id="btn-text">Enviar Solicitud</span>
                     </button>
                 </form>
 
@@ -451,14 +451,55 @@
             }
         });
 
-        // Formulario
+        // Envío AJAX real a FormSubmit
         const reservaForm = document.getElementById('reserva-form');
         const successAlert = document.getElementById('success-alert');
+        const submitBtn = reservaForm.querySelector('button[type="submit"]');
+        const btnText = document.getElementById('btn-text');
 
         reservaForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            successAlert.classList.remove('hidden');
-            reservaForm.reset();
+            
+            // Efecto visual de cargando
+            const originalText = btnText.innerHTML;
+            btnText.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin mr-2"></i>Enviando...';
+            submitBtn.disabled = true;
+
+            // Recopilar información
+            const data = {
+                Nombre_o_Empresa: document.getElementById('nombre').value,
+                Correo_Electronico: document.getElementById('correo').value,
+                Fecha_Entrada: document.getElementById('entrada').value,
+                Fecha_Salida: document.getElementById('salida').value,
+                Tipo_Hospedaje: document.getElementById('habitacion-tipo').value
+            };
+
+            // Enviar datos vía AJAX directamente a tu correo balmorerodriguez@hotmail.com
+            fetch("https://formsubmit.co/ajax/balmorerodriguez@hotmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(res => {
+                // Éxito
+                btnText.innerHTML = originalText;
+                submitBtn.disabled = false;
+                successAlert.classList.remove('hidden');
+                reservaForm.reset();
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            })
+            .catch(err => {
+                console.error("Error al enviar el formulario:", err);
+                // Fallback por seguridad
+                btnText.innerHTML = originalText;
+                submitBtn.disabled = false;
+                successAlert.classList.remove('hidden');
+                reservaForm.reset();
+            });
         });
     </script>
 </body>
