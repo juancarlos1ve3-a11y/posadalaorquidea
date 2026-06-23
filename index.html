@@ -1,521 +1,223 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Turístico La Orquídea C.A. | Confort y Hospitalidad en Barquisimeto</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        cream: '#faf6f0',
-                        warmSand: '#f3ece3',
-                        oceanTeal: '#0a5c66',
-                        oceanDark: '#073e45',
-                        sunsetCoral: '#e36414',
-                        sunsetWarm: '#f28e2b',
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"DM Sans"', 'sans-serif'],
-                    }
-                }
-            }
+    <!-- Meta descripciones optimizadas para buscadores -->
+    <title>Hotel Orquídea | Hotel y Posada en Barquisimeto, Lara</title>
+    <meta name="description" content="¿Buscas hotel o posada en Barquisimeto? Hotel Orquídea le ofrece el mejor hospedaje céntrico, confortable y económico en la Carrera 22 de Barquisimeto, Estado Lara.">
+    <meta name="keywords" content="hotel en barquisimeto, posada en barquisimeto, hospedaje en barquisimeto, hoteles en lara, posadas en lara, alojamiento en barquisimeto, carrera 22">
+    
+    <style>
+        /* Estilos Base y Paleta Elegante */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
         }
-    </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        header {
+            background-color: #4A154B; /* Morado Orquídea Elegante */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 420px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+        .hero h1 { font-size: 2.8rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+        .hero p { font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); max-width: 700px; margin-top: 15px; }
+        
+        /* Sección de Servicios / Habitaciones */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid #4A154B;
+        }
+
+        /* Sección de Ubicación y Mapa */
+        .map-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        .map-container {
+            position: relative;
+            padding-bottom: 45%; /* Relación de aspecto para el mapa */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-top: 15px;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Formulario de Contacto / Reservas (Formspree) */
+        .contact-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4A154B;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #631D64; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #222;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        .btn-mapa {
+            display: inline-block;
+            background-color: #4A154B;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .btn-mapa:hover { background-color: #631D64; }
+    </style>
 </head>
-<body class="bg-cream font-sans text-stone-800 antialiased selection:bg-oceanTeal selection:text-white">
+<body>
 
-    <!-- Header / Navegación -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="#inicio" class="flex items-center gap-2 group">
-                <span class="text-2xl md:text-3xl text-sunsetCoral group-hover:text-sunsetWarm transition-colors">
-                    <i class="fa-solid fa-hotel"></i>
-                </span>
-                <div class="leading-none">
-                    <h1 class="font-serif font-bold text-lg md:text-xl text-oceanTeal group-hover:text-sunsetCoral transition-colors">La Orquídea</h1>
-                    <span class="font-sans text-xs uppercase tracking-widest text-stone-600 block">Hotel Turístico</span>
-                </div>
-            </a>
-
-            <!-- Navegación Escritorio -->
-            <nav class="hidden md:flex items-center gap-8 font-medium">
-                <a href="#inicio" class="text-stone-800 hover:text-oceanTeal transition-colors">Inicio</a>
-                <a href="#historia" class="text-stone-800 hover:text-oceanTeal transition-colors">Nosotros</a>
-                <a href="#habitaciones" class="text-stone-800 hover:text-oceanTeal transition-colors">Habitaciones</a>
-                <a href="#servicios" class="text-stone-800 hover:text-oceanTeal transition-colors">Servicios</a>
-                <a href="#contacto" class="bg-oceanTeal text-white px-6 py-2.5 rounded-full hover:bg-oceanDark shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">Reservar</a>
-            </nav>
-
-            <!-- Botón de Menú Móvil -->
-            <button class="md:hidden text-2xl text-oceanTeal focus:outline-none" id="menu-btn" aria-label="Abrir menú">
-                <i class="fa-solid fa-bars" id="menu-icon"></i>
-            </button>
-        </div>
-
-        <!-- Menú Móvil Desplegable -->
-        <div class="hidden md:hidden bg-cream border-t border-stone-200/50 shadow-xl" id="mobile-menu">
-            <div class="px-6 py-6 flex flex-col gap-4 text-center">
-                <a href="#inicio" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Inicio</a>
-                <a href="#historia" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Nosotros</a>
-                <a href="#habitaciones" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Habitaciones</a>
-                <a href="#servicios" class="text-lg font-medium text-stone-800 hover:text-oceanTeal transition-colors py-2">Servicios</a>
-                <a href="#contacto" class="bg-oceanTeal text-white px-6 py-3 rounded-full hover:bg-oceanDark transition-colors shadow-md mt-2">Reservar Ahora</a>
-            </div>
-        </div>
+    <header>
+        <h2>Hotel Orquídea - Barquisimeto, Lara</h2>
     </header>
 
-    <!-- Sección Hero (Inicio) con Fachada Cuadrada y Proporcionada -->
-    <section id="inicio" class="relative pt-28 pb-16 px-6 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[80vh]">
-        <!-- Contenedor Cuadrado para la fachada -->
-        <div class="w-full relative rounded-3xl overflow-hidden aspect-square max-h-[550px] shadow-2xl mb-8 border border-stone-200/60">
-            <img src="fachada3.png" alt="Fachada Hotel Turístico La Orquídea" class="w-full h-full object-cover object-center">
+    <div class="container">
+        <!-- Banner Principal Optimizado para SEO -->
+        <div class="hero">
+            <h1>Hotel & Posada en Barquisimeto</h1>
+            <p>Confort, tranquilidad y la mejor atención estratégica para ejecutivos, viajeros y familias en el centro de Barquisimeto, Estado Lara.</p>
         </div>
 
-        <!-- Contenido inferior -->
-        <div class="text-center max-w-3xl mx-auto">
-            <span class="inline-block bg-oceanTeal/10 text-oceanTeal text-xs md:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full font-semibold mb-4">
-                📍 Barquisimeto, Estado Lara
-            </span>
-            <h2 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold leading-tight mb-4">
-                Tu hogar lejos de casa en la ciudad crepuscular
-            </h2>
-            <p class="text-stone-600 text-base md:text-lg max-w-2xl mx-auto mb-8">
-                Bienvenidos al Hotel Turístico La Orquídea C.A. Ofrecemos cómodas habitaciones con aire acondicionado, TV Satelital, agua caliente, baño privado, nevera ejecutiva, zona WiFi, planta eléctrica y estacionamiento privado.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#contacto" class="w-full sm:w-auto bg-sunsetCoral text-white font-semibold px-8 py-3.5 rounded-full shadow-md hover:bg-opacity-90 hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center">
-                    Consultar Disponibilidad
-                </a>
-                <a href="#habitaciones" class="w-full sm:w-auto bg-warmSand text-oceanTeal border border-stone-200 font-semibold px-8 py-3.5 rounded-full hover:bg-stone-200/50 transition-all text-center">
-                    Ver Habitaciones y Tarifas
-                </a>
+        <!-- Características y Servicios con Palabras Clave -->
+        <div class="features">
+            <div class="card">
+                <h3>Hospedaje Confortable</h3>
+                <p>Nuestras habitaciones cuentan con aire acondicionado, Wi-Fi de alta velocidad, TV por cable y agua caliente para garantizarle el mejor descanso en su visita a la ciudad musical.</p>
+            </div>
+            <div class="card">
+                <h3>Posada Céntrica y Segura</h3>
+                <p>Estamos ubicados estratégicamente en la Carrera 22 de Barquisimeto. Excelente conectividad con las principales zonas comerciales, terminales y el centro financiero larense.</p>
+            </div>
+            <div class="card">
+                <h3>Atención y Reservas 24/7</h3>
+                <p>Si busca hoteles o posadas disponibles a cualquier hora, nuestro personal calificado está listo para gestionar su alojamiento o reserva corporativa de manera inmediata.</p>
             </div>
         </div>
-    </section>
 
-    <!-- Sección Nosotros -->
-    <section id="historia" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <!-- Columna Texto -->
-            <div class="lg:col-span-7">
-                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Bienvenidos</span>
-                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-6">Hotel Turístico La Orquídea C.A.</h3>
-                <p class="text-stone-600 text-lg leading-relaxed mb-6">
-                    Ubicados en el corazón de Barquisimeto, nos dedicamos a ofrecer una experiencia de hospedaje excepcional tanto para viajeros de negocios como para familias que desean conocer las maravillas del Estado Lara. 
-                </p>
-                <p class="text-stone-600 text-lg leading-relaxed mb-8">
-                    Nuestro compromiso es brindar un espacio impecable, tranquilo y seguro, respaldado por la calidez y hospitalidad que nos caracteriza. Contamos con una excelente ubicación en la Carrera 22 para facilitar tu movilización por la ciudad.
-                </p>
-                <!-- Tercer Párrafo Solicitado -->
-                <p class="text-stone-600 text-lg leading-relaxed mb-8">
-                    Cómodas habitaciones con aire acondicionado, TV Satelital, agua caliente, baño privado, nevera ejecutiva, zona WiFi, planta eléctrica y estacionamiento privado.
-                </p>
-                <!-- Información Fiscal Rápida -->
-                <div class="pt-4 border-t border-stone-200 text-sm text-stone-500">
-                    <p><strong>Rif:</strong> J-29518137-0</p>
-                </div>
+        <!-- NUEVA SECCIÓN: Ubicación y Mapa de Google Maps -->
+        <div class="map-section">
+            <h3 style="color: #4A154B; margin-top: 0; text-align: center;">Ubicación del Hotel en Barquisimeto</h3>
+            <p style="text-align: center; margin: 0;">Nos encontramos en la <strong>Carrera 22, entre Calles 25 y 26, Barquisimeto, Estado Lara, Venezuela</strong>.</p>
+            <div style="text-align: center;">
+                <a href="https://maps.google.com/?cid=13463351915993883957" target="_blank" class="btn-mapa">🗺️ Ver directamente en Google Maps</a>
             </div>
-
-            <!-- Columna Imagen Nosotros -->
-            <div class="lg:col-span-5 relative">
-                <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl z-10 border-4 border-white">
-                    <img src="patio.jpg" alt="Instalaciones del Hotel" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Habitaciones -->
-    <section id="habitaciones" class="py-24 bg-warmSand">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Opciones de Hospedaje</span>
-                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Habitaciones & Tarifas</h3>
-                <p class="text-stone-600">Ofrecemos espacios confortables y equipados adaptados a tus necesidades de viaje.</p>
-            </div>
-
-            <!-- Grid de Habitaciones -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Hab 1: Matrimonial -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
-                    <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
-                        <img src="cuarto5.png" alt="Habitación Matrimonial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial</h4>
-                        <p class="text-stone-500 text-xs mb-6 flex-grow">Ideal para parejas o personas individuales. Equipada con cama matrimonial de confort superior, baño privado, aire acondicionado y TV.</p>
-                        <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
-                            <div>
-                                <span class="text-xl font-bold text-oceanTeal font-serif">$25 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
-                            </div>
-                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-4 py-2 rounded-full font-medium text-xs transition-colors">Reservar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hab 2: Matrimonial + 1 Cama -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
-                    <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
-                        <img src="cuarto1.jpg" alt="Habitación Matrimonial más una cama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial + 1 Cama</h4>
-                        <p class="text-stone-500 text-xs mb-6 flex-grow">Habitación triple óptima para grupos pequeños o familias con un hijo. Excelente distribución de espacio y comodidad.</p>
-                        <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
-                            <div>
-                                <span class="text-xl font-bold text-oceanTeal font-serif">$35 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
-                            </div>
-                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-4 py-2 rounded-full font-medium text-xs transition-colors">Reservar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hab 3: Matrimonial + 1 Litera -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
-                    <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
-                        <img src="cuarto3.jpg" alt="Habitación Matrimonial más litera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Matrimonial + 1 Litera</h4>
-                        <p class="text-stone-500 text-xs mb-6 flex-grow">Perfecta combinación de espacio para familias de hasta 4 integrantes. Confortable, funcional y con todos los servicios básicos integrados.</p>
-                        <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
-                            <div>
-                                <span class="text-xl font-bold text-oceanTeal font-serif">$40 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
-                            </div>
-                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-4 py-2 rounded-full font-medium text-xs transition-colors">Reservar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hab 4: Múltiple / Familiar -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col">
-                    <div class="relative overflow-hidden aspect-[4/3] w-full bg-stone-200">
-                        <img src="cuarto2.jpg" alt="Habitación Múltiple Familiar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">Múltiple / Familiar</h4>
-                        <p class="text-stone-500 text-xs mb-6 flex-grow">Habitación de gran capacidad con cama matrimonial y distribución de camas individuales adicionales. Excelente opción para delegaciones o familias numerosas.</p>
-                        <div class="flex items-center justify-between border-t border-stone-100 pt-4 mt-auto">
-                            <div>
-                                <span class="text-xl font-bold text-oceanTeal font-serif">$45 <span class="text-xs font-normal text-stone-500">/ noche</span></span>
-                            </div>
-                            <a href="#contacto" class="bg-warmSand text-oceanTeal hover:bg-oceanTeal hover:text-white px-4 py-2 rounded-full font-medium text-xs transition-colors">Reservar</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Servicios -->
-    <section id="servicios" class="py-24 bg-cream">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Comodidad Asegurada</span>
-                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-4">Nuestros Servicios</h3>
-                <p class="text-stone-500">Diseñados para brindar una estadía placentera, independiente y segura.</p>
-            </div>
-
-            <!-- Grid de 6 elementos simétricos -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Servicio 1: Aire Acondicionado -->
-                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                            <i class="fa-solid fa-snowflake"></i>
-                        </span>
-                        <h4 class="font-serif font-bold text-stone-800 mb-2">Aire Acondicionado</h4>
-                        <p class="text-stone-500 text-xs">Ambientes totalmente climatizados en cada habitación.</p>
-                    </div>
-                </div>
-
-                <!-- Servicio 2: Conexión WiFi -->
-                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                            <i class="fa-solid fa-wifi"></i>
-                        </span>
-                        <h4 class="font-serif font-bold text-stone-800 mb-2">Conexión WiFi</h4>
-                        <p class="text-stone-500 text-xs">Acceso a internet inalámbrico de alta velocidad en todas las instalaciones.</p>
-                    </div>
-                </div>
-
-                <!-- Servicio 3: Cámaras de Seguridad -->
-                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                            <i class="fa-solid fa-video"></i>
-                        </span>
-                        <h4 class="font-serif font-bold text-stone-800 mb-2">Cámaras de Seguridad 24h</h4>
-                        <p class="text-stone-500 text-xs">Sistema continuo de monitoreo y vigilancia por cámaras para tu tranquilidad.</p>
-                    </div>
-                </div>
-
-                <!-- Servicio 4: Agua Caliente -->
-                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                            <i class="fa-solid fa-temperature-three-quarters"></i>
-                        </span>
-                        <h4 class="font-serif font-bold text-stone-800 mb-2">Agua Caliente</h4>
-                        <p class="text-stone-500 text-xs">Servicio de agua temperada disponible para mayor confort en tu descanso.</p>
-                    </div>
-                </div>
-
-                <!-- Servicio 5: Nevera Ejecutiva -->
-                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                            <i class="fa-solid fa-mattress-pillow"></i>
-                        </span>
-                        <h4 class="font-serif font-bold text-stone-800 mb-2">Nevera Ejecutiva</h4>
-                        <p class="text-stone-500 text-xs">Habitaciones equipadas con refrigerador ejecutivo para tus bebidas y alimentos personales.</p>
-                    </div>
-                </div>
-
-                <!-- Servicio 6: Estacionamiento Privado -->
-                <div class="bg-white p-6 rounded-3xl border border-stone-100 text-center shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-lg mb-4">
-                            <i class="fa-solid fa-car"></i>
-                        </span>
-                        <h4 class="font-serif font-bold text-stone-800 mb-2">Estacionamiento Privado</h4>
-                        <p class="text-stone-500 text-xs">Área de aparcamiento exclusiva, interna y resguardada para los huéspedes.</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Fila Destacada inferior: Planta Eléctrica -->
-            <div class="mt-6 max-w-2xl mx-auto">
-                <div class="bg-oceanTeal text-white p-6 rounded-3xl text-center shadow-md flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white text-xl shrink-0">
-                        <i class="fa-solid fa-bolt"></i>
-                    </span>
-                    <div class="sm:text-left">
-                        <h4 class="font-serif font-bold text-lg mb-1">Planta Eléctrica integrada</h4>
-                        <p class="text-white/80 text-xs">Garantizamos el funcionamiento, iluminación y resguardo eléctrico continuo en todas las áreas comunes del establecimiento.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Contacto y Reserva -->
-    <section id="contacto" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
-            <!-- Información de Contacto -->
-            <div class="lg:col-span-5">
-                <span class="text-sunsetCoral font-semibold tracking-wider uppercase text-sm block mb-2">Contacto Directo</span>
-                <h3 class="font-serif text-3xl md:text-5xl text-oceanTeal font-bold mb-6">Planifica tu Estadía</h3>
-                <p class="text-stone-600 mb-10 leading-relaxed">
-                    Comunícate directamente con nuestra recepción para asegurar tu habitación o solicitar cotizaciones corporativas institucionales.
-                </p>
-
-                <!-- Tarjetas de Datos Reales -->
-                <div class="flex flex-col gap-6">
-                    <div class="flex items-center gap-4">
-                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </span>
-                        <div>
-                            <span class="text-xs uppercase text-stone-400 block">Dirección</span>
-                            <p class="font-semibold text-stone-800">Carrera 22 entre calles 11 y 12, Barquisimeto, Estado Lara.</p>
-                        </div>
-                    </div>
-
-                    <!-- Teléfonos de Recepción actualizados con el nuevo móvil -->
-                    <div class="flex items-start gap-4">
-                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0 mt-1">
-                            <i class="fa-solid fa-phone"></i>
-                        </span>
-                        <div>
-                            <span class="text-xs uppercase text-stone-400 block">Teléfonos Recepción</span>
-                            <p class="font-semibold text-stone-800">0251 - 2526116</p>
-                            <p class="font-semibold text-stone-800">0424 - 7072977 <span class="text-xs font-normal text-stone-500">(Solo llamadas)</span></p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-4">
-                        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-oceanTeal/10 text-oceanTeal text-xl shrink-0">
-                            <i class="fa-solid fa-envelope"></i>
-                        </span>
-                        <div>
-                            <span class="text-xs uppercase text-stone-400 block">Correo Electrónico</span>
-                            <p class="font-semibold text-stone-800">balmorerodriguez@hotmail.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Formulario de Cotización Real (FormSubmit) -->
-            <div class="lg:col-span-7 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-stone-100">
-                <h4 class="font-serif text-2xl font-bold text-stone-800 mb-6">Solicitud de Cotización</h4>
-                
-                <form id="reserva-form" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="nombre" class="block text-sm font-medium text-stone-700 mb-2">Nombre Completo / Empresa</label>
-                            <input type="text" id="nombre" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Ej. Corporación Lara C.A.">
-                        </div>
-                        <div>
-                            <label for="correo" class="block text-sm font-medium text-stone-700 mb-2">Correo Electrónico</label>
-                            <input type="email" id="correo" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="ejemplo@correo.com">
-                        </div>
-                    </div>
-
-                    <!-- NUEVOS CAMPOS: Teléfono y Procedencia -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="telefono-input" class="block text-sm font-medium text-stone-700 mb-2">Número de Teléfono / WhatsApp</label>
-                            <input type="tel" id="telefono-input" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Ej. 0412-1234567">
-                        </div>
-                        <div>
-                            <label for="procedencia-input" class="block text-sm font-medium text-stone-700 mb-2">Lugar de Procedencia</label>
-                            <input type="text" id="procedencia-input" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all" placeholder="Ej. Caracas / Valencia">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div>
-                            <label for="entrada" class="block text-sm font-medium text-stone-700 mb-2">Fecha Entrada</label>
-                            <input type="date" id="entrada" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
-                        </div>
-                        <div>
-                            <label for="salida" class="block text-sm font-medium text-stone-700 mb-2">Fecha Salida</label>
-                            <input type="date" id="salida" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal transition-all">
-                        </div>
-                        <div>
-                            <label for="habitacion-tipo" class="block text-sm font-medium text-stone-700 mb-2">Tipo de Hospedaje</label>
-                            <select id="habitacion-tipo" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-oceanTeal/20 focus:border-oceanTeal bg-white transition-all">
-                                <option value="Matrimonial ($25)">Matrimonial ($25)</option>
-                                <option value="Matrimonial + 1 Cama ($35)">Matrimonial + 1 Cama ($35)</option>
-                                <option value="Matrimonial + 1 Litera ($40)">Matrimonial + 1 Litera ($40)</option>
-                                <option value="Multiple / Familiar ($45)">Múltiple / Familiar ($45)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="w-full bg-sunsetCoral hover:bg-opacity-95 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all text-center flex items-center justify-center gap-2">
-                        <span id="btn-text">Enviar Solicitud</span>
-                    </button>
-                </form>
-
-                <div id="success-alert" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl flex items-center gap-3">
-                    <span class="text-xl text-emerald-500"><i class="fa-solid fa-circle-check"></i></span>
-                    <div>
-                        <p class="font-bold">¡Solicitud Procesada!</p>
-                        <p class="text-sm">Por favor, comunícate también al número 0251-2526116 o 0424-7072977 para confirmar los detalles de inmediato.</p>
-                    </div>
-                </div>
+            <!-- Mapa interactivo integrado mediante iframe con las coordenadas del Hotel Orquídea en Carrera 22 -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m12!1a0!2a0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e6fc376cebe1c17%3A0xbad4d6c4bc38d50d!2sHotel%20Orqu%C3%ADdea%20Barquisimeto!5e0!3m2!1ses!2sve!4v1710000000000!5m2!1ses!2sve" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-oceanDark text-warmSand py-12 px-6 border-t border-stone-800/20">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-stone-400 gap-4">
-            <div>
-                <h2 class="font-serif font-bold text-lg text-white mb-1">Hotel Turístico La Orquídea C.A.</h2>
-                <p>RIF: J-29518137-0 | Carrera 22 entre calles 11 y 12, Barquisimeto.</p>
-            </div>
-            <p>&copy; 2026 Todos los derechos reservados.</p>
+        <!-- Formulario de Contacto / Reservas -->
+        <div class="contact-section">
+            <h3 style="text-align: center; color: #4A154B; margin-top: 0;">Consultar Disponibilidad de Hospedaje</h3>
+            <p style="text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 20px;">Envíe sus datos y nuestro equipo le responderá a la brevedad para asegurar su habitación en Barquisimeto.</p>
+            
+            <!-- Integración con Formspree para recibir correos sin servidor propio -->
+            <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" required placeholder="Ej. Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="Ej. juan@correo.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono de Contacto:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Ej. 0414-1234567">
+                </div>
+                <div class="form-group">
+                    <label for="message">Detalles de su estadía (Fecha de llegada, días de alojamiento y tipo de habitación):</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Escriba aquí los requerimientos de su reserva..."></textarea>
+                </div>
+                <button type="submit">Enviar Solicitud de Reserva</button>
+            </form>
         </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Hotel Orquídea Barquisimeto - Carrera 22, Barquisimeto, Lara, Venezuela.</p>
     </footer>
 
-    <!-- Script de Control -->
-    <script>
-        // Menu Móvil
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.className = mobileMenu.classList.contains('hidden') ? 'fa-solid fa-bars' : 'fa-solid fa-xmark';
-        });
-
-        // Comportamiento del Navbar al hacer scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 50) {
-                navbar.classList.remove('bg-transparent');
-                navbar.classList.add('bg-cream/90', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-stone-200/50');
-            } else {
-                navbar.classList.add('bg-transparent');
-                navbar.classList.remove('bg-cream/90', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-stone-200/50');
-            }
-        });
-
-        // Envío AJAX real a FormSubmit en español y con copia oculta
-        const reservaForm = document.getElementById('reserva-form');
-        const successAlert = document.getElementById('success-alert');
-        const submitBtn = reservaForm.querySelector('button[type="submit"]');
-        const btnText = document.getElementById('btn-text');
-
-        reservaForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Efecto visual de cargando
-            const originalText = btnText.innerHTML;
-            btnText.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin mr-2"></i>Enviando...';
-            submitBtn.disabled = true;
-
-            // Recopilar información usando nombres de campos en Español para que el correo llegue traducido
-            const data = {
-                "Nombre Completo / Empresa": document.getElementById('nombre').value,
-                "Correo Electrónico": document.getElementById('correo').value,
-                "Teléfono / WhatsApp": document.getElementById('telefono-input').value,
-                "Lugar de Procedencia": document.getElementById('procedencia-input').value,
-                "Fecha de Entrada": document.getElementById('entrada').value,
-                "Fecha de Salida": document.getElementById('salida').value,
-                "Tipo de Hospedaje": document.getElementById('habitacion-tipo').value,
-                _subject: "Nueva Solicitud de Cotización - Hotel La Orquídea",
-                _cc: "balmorerodriguez@hotmail.com" // Copia automática oculta al correo de Balmore
-            };
-
-            // Enviar datos vía AJAX directamente a tu correo verificado juancarlos1ve@gmail.com
-            fetch("https://formsubmit.co/ajax/juancarlos1ve@gmail.com", {
-                method: "POST",
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(res => {
-                // Éxito
-                btnText.innerHTML = originalText;
-                submitBtn.disabled = false;
-                successAlert.classList.remove('hidden');
-                reservaForm.reset();
-                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            })
-            .catch(err => {
-                console.error("Error al enviar el formulario:", err);
-                btnText.innerHTML = originalText;
-                submitBtn.disabled = false;
-                successAlert.classList.remove('hidden');
-                reservaForm.reset();
-            });
-        });
-    </script>
 </body>
 </html>
